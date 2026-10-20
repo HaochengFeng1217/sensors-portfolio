@@ -3,8 +3,8 @@
 Personal portfolio for HSBI, Campus Gütersloh, WS 2026/27.
 
 - GitHub account: [HaochengFeng1217](https://github.com/HaochengFeng1217)
-- Full name: TODO
-- Partner / project team: not yet recorded
+- Full name: Haocheng Feng
+- Partner / project team: TBD
 - Template: [iotempire/iot-portfolio-template](https://github.com/iotempire/iot-portfolio-template)
 
 ## Current status
