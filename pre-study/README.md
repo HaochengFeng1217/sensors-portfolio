@@ -4,7 +4,7 @@ Course: HSBI Sensorik und Aktorik, WS 2026/27
 GitHub account: HaochengFeng1217  
 Full name: Haocheng Feng  
 Entry started: 2026-10-20  
-Status: **In progress - Questions 1-7 documented; project abstract pending.**
+Status: **In progress - Questions 1-8 documented; personal review and preparation checks pending.**
 
 ## Preparation log
 
@@ -18,7 +18,8 @@ Status: **In progress - Questions 1-7 documented; project abstract pending.**
 - Added an I²C shared-bus explanation, signal diagram, and likely communication problems.
 - Added an actuator choice for a small lever-operated latch, with assumptions and a torque-sizing example.
 - Added the full-white LED current/power calculation and a supply-sizing example.
-- Question 8 and the remaining preparation checks are still pending.
+- Selected a touch-confirmed proximity storage box and added a project abstract.
+- Personal review, supplementary study notes, and the remaining preparation checks are still pending.
 
 ## Completion checklist
 
@@ -31,7 +32,7 @@ Status: **In progress - Questions 1-7 documented; project abstract pending.**
 - [x] ADC resolution changed and actual observations recorded.
 - [x] Coarse threshold/step behaviour tested and described.
 - [x] Real circuit and serial-output screenshots, or a saved simulation link, added.
-- [ ] 5-10 line project abstract added, identifying two sensors and one actuator.
+- [x] 5-10 line project abstract added, identifying two sensors and one actuator.
 - [ ] Remaining pre-study answers completed and final links checked.
 - [ ] Instructor access arranged through the course's confirmed process.
 - [ ] Arduino IDE v2 or PlatformIO readiness checked on the Mac.
@@ -267,17 +268,18 @@ explains the full-white estimate, power-supply headroom, and power distribution.
 
 ## 8. Project abstract
 
-Status: **Idea not yet selected.**
+**Tentative project: Touch-confirmed proximity storage box**
 
-Write 5-10 lines about a concrete user, scenario, problem, sensor inputs,
-and actuator response. This is a tentative direction.
+Status: **Concept selected; implementation and validation planned.**
 
-TODO: personal project abstract.
-
-- Sensor 1 and purpose: TODO
-- Sensor 2 and purpose: TODO
-- Actuator and response: TODO
-- Main uncertainty / question to investigate: TODO
+This project proposes a small desktop storage box for students to keep keys or other small items together.<br>
+The goal is convenient access with a deliberate touch confirmation instead of responding to a passing hand alone.<br>
+An ESP32 will read a VL53L0X distance sensor to detect a hand approaching the front of the box.<br>
+An MPR121 touch pad will provide the user's confirmation while the hand is nearby.<br>
+When both conditions are met, a positional servo will release a lightweight latch so the user can open the lid manually.<br>
+After closing the lid, the user will request relatching with a second deliberate touch.<br>
+The prototype will test distance thresholds, touch sensitivity, servo travel, and power requirements.<br>
+The main uncertainty is achieving repeatable latch movement while avoiding unintended triggers.
 
 ## Additional study notes
 
@@ -298,8 +300,8 @@ TODO: personal project abstract.
 
 ## Reflection and open questions
 
-- Completed: portfolio structure, Questions 1-7, the Wokwi ADC/LED experiment with saved evidence, and both sensor datasheet notes.
-- Remaining: Question 8 (personal project abstract) and the remaining preparation checks.
+- Completed: portfolio structure, written answers for Questions 1-8, the Wokwi ADC/LED experiment with saved evidence, and both sensor datasheet notes.
+- Remaining: personal review and understanding, supplementary study notes, instructor access, and Mac development-environment readiness.
 - Open question: how real ESP32 ADC noise, offset, and non-linearity differ from this simulation.
 - Verification: checked the circuit against the component pin references, compared the serial
   ranges with the ADC API, and tested the output threshold boundaries in the running simulation.
