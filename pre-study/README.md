@@ -4,7 +4,7 @@ Course: HSBI Sensorik und Aktorik, WS 2026/27
 GitHub account: HaochengFeng1217  
 Full name: Haocheng Feng  
 Entry started: 2026-10-20  
-Status: **In progress - Questions 1-5 documented; remaining answers pending.**
+Status: **In progress - Questions 1-6 documented; remaining answers pending.**
 
 ## Preparation log
 
@@ -16,7 +16,8 @@ Status: **In progress - Questions 1-5 documented; remaining answers pending.**
 - Added manufacturer datasheet notes for VL53L0X and MPR121, including address conventions and specification conditions.
 - Added two hypothetical scale examples to explain accuracy and precision.
 - Added an I²C shared-bus explanation, signal diagram, and likely communication problems.
-- Questions 6-8 and the remaining preparation checks are still pending.
+- Added an actuator choice for a small lever-operated latch, with assumptions and a torque-sizing example.
+- Questions 7-8 and the remaining preparation checks are still pending.
 
 ## Completion checklist
 
@@ -198,12 +199,40 @@ Sections **3.1.1**, **3.1.6**, **3.1.10**, and **7.1**.
 
 ## 6. Actuator choice: small door latch
 
-Choose an actuator for moving a small door latch once every few minutes.
-Compare torque, control, and power; identify an unsuitable alternative.
+**Choice and assumptions:** A small positional RC servo driving a short lever.
+Assume the latch has two end positions, modest friction, and a mechanical catch
+that holds the closed state without continuous motor torque. Movement is needed
+only once every few minutes. The actual latch force and travel still need checking
+before selecting a particular servo model.
 
-- Choice and assumptions about the latch: TODO
-- Torque / control / power justification: TODO
-- Rejected alternative and reason: TODO
+**Torque:** For a tangential force, the required lever torque is `torque = force × radius`.
+As an illustrative sizing assumption, **2 N** acting at **10 mm** gives
+`2 N × 0.010 m = 0.020 N·m`. The selected servo must have operating torque margin
+for starting friction and the linkage geometry. This example does not establish
+the torque requirement of an actual latch.
+
+**Control:** Command the two positions using the servo's control-pulse width.
+Set the endpoints to match the linkage travel and avoid forcing the mechanism
+against a stop. Pulse-width-to-angle mapping and allowed pulse limits depend on
+the servo; they should be checked rather than assumed from an angle command alone.
+[Pololu: servo control interface](https://www.pololu.com/blog/17/servo-control-interface-in-detail).
+
+**Power:** Use a supply within the chosen servo's voltage rating and with sufficient
+current for startup and load peaks. The MCU provides the control signal; the motor
+supply carries the motor current, with a common ground. Infrequent movement can
+reduce average demand, but a powered servo may still draw current while holding a
+load. Any power-off strategy depends on the latch retaining its state mechanically.
+[Arduino: powering servo motors](https://docs.arduino.cc/learn/electronics/servo-motors/#powering-servo-motors).
+
+| Alternative | Force/torque and control | Power and fit for this task |
+|---|---|---|
+| Lock-style solenoid | Direct linear pull, with force depending on stroke; switched using a transistor and flyback diode. | A suitable alternative for a spring-return latch. A design that holds closed mechanically can use power only while retracting; supply and energization limits are model-specific. |
+| Bare DC motor | Produces rotation; gearing and a linkage set the available latch force. A motor driver and endpoint feedback or switches are needed for controlled positioning. | Rejected on its own: applying power does not select a repeatable open/closed position. Adding the necessary control and mechanics makes it a more involved solution. |
+
+The [Adafruit lock-style solenoid example](https://www.adafruit.com/product/1512)
+illustrates an unpowered locked state, powered retraction, and the transistor/diode
+driver requirement. The preferred actuator would be reconsidered if the actual
+latch needs a direct linear stroke or continuous holding force.
 
 ## 7. LED power calculation
 
@@ -247,8 +276,8 @@ TODO: personal project abstract.
 
 ## Reflection and open questions
 
-- Completed: portfolio structure, the phone auto-rotation chain explanation, the Wokwi ADC/LED experiment with saved evidence, both sensor datasheet notes, the accuracy/precision comparison, and the I²C shared-bus explanation.
-- Remaining: Questions 6-8, including a personal project abstract, and the remaining preparation checks.
+- Completed: portfolio structure, Questions 1-6, the Wokwi ADC/LED experiment with saved evidence, and both sensor datasheet notes.
+- Remaining: Questions 7-8, including a personal project abstract, and the remaining preparation checks.
 - Open question: how real ESP32 ADC noise, offset, and non-linearity differ from this simulation.
 - Verification: checked the circuit against the component pin references, compared the serial
   ranges with the ADC API, and tested the output threshold boundaries in the running simulation.
