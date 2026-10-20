@@ -4,7 +4,7 @@ Course: HSBI Sensorik und Aktorik, WS 2026/27
 GitHub account: HaochengFeng1217  
 Full name: Haocheng Feng  
 Entry started: 2026-10-20  
-Status: **In progress - Wokwi experiment completed; other pre-study answers pending.**
+Status: **In progress - Questions 1 and 2 documented; remaining answers pending.**
 
 ## Preparation log
 
@@ -12,6 +12,7 @@ Status: **In progress - Wokwi experiment completed; other pre-study answers pend
 - ESP32 potentiometer-to-LED simulation run on 2026-10-21.
 - Compared 12-bit and 10-bit readings and tested a four-level brightness mapping.
 - Saved the project, source files, serial output, and three screenshots.
+- Documented the sensor-to-system chain for screen auto-rotation on my iPhone 15 Pro Max.
 - Datasheet reading, the remaining guiding questions, and the project abstract are still pending.
 
 ## Completion checklist
@@ -32,12 +33,38 @@ Status: **In progress - Wokwi experiment completed; other pre-study answers pend
 
 ## 1. Sensor-to-system chain
 
-Choose a device I actually own. Identify the physical quantity, transducer, conditioning,
-ADC, MCU, and system. Check what is known about the device instead of inventing its internals.
+**Device:** My iPhone 15 Pro Max. Screen auto-rotation is a visible example of a
+system responding to a change in the device's physical orientation.
 
-- Device and reason for choosing it: TODO
-- Chain diagram and explanation: TODO
-- Source or uncertainty about internal components: TODO
+**Simplified chain:** Acceleration along the phone's axes → sensing element →
+signal conditioning → ADC → sensor processing and host processor → screen orientation.
+
+Apple lists a high-g accelerometer, a high dynamic range gyroscope, and the A17 Pro
+chip for this model. Its Core Motion documentation describes a gravity vector in
+the device's reference frame. When the phone is held still in a different orientation,
+the gravity components along its axes change; this provides information for estimating
+tilt. [iPhone specifications](https://support.apple.com/en-us/111828),
+[Core Motion: gravity](https://developer.apple.com/documentation/coremotion/cmdevicemotion/gravity).
+
+The sensing, conditioning, and conversion stages below use a representative
+capacitive MEMS accelerometer model.
+
+| Stage | Role in the chain |
+|---|---|
+| Physical quantity | Acceleration along three axes. At rest, the gravity components provide a reference for tilt. |
+| Transducer | In a capacitive MEMS design, acceleration moves a tiny suspended mass and changes a differential capacitance. |
+| Signal conditioning | Sensing electronics convert the small capacitance change into an electrical signal suitable for conversion. |
+| ADC | Converts the analog sensor signal into digital acceleration readings. The representative sensor integrates this conversion before its digital interface. |
+| MCU / processor role | Sensor processing and the phone's processor/operating system use motion data to estimate orientation. The phone has an A17 Pro application processor; the exact sensor-hub hardware and division of processing are unconfirmed. |
+| System | In an app that supports rotation, with orientation lock off, the interface can switch between portrait and landscape. |
+
+The [ADXL345 datasheet, Rev. G](https://www.analog.com/media/en/technical-documentation/data-sheets/adxl345.pdf)
+illustrates the integrated sensing electronics, ADC, digital filter, and digital
+interface in Figure 1 (p. 1), and explains capacitive sensing on p. 12. It is an
+example for the model above; the actual sensor part number, ADC resolution, interface,
+and rotation algorithm in my iPhone remain unconfirmed.
+[Apple's rotation guide](https://support.apple.com/guide/iphone/rotate-your-iphone-screen-iph3badf94ec/27/ios/27)
+describes the user-visible rotation behavior and orientation lock.
 
 ## 2. Wokwi observations: ADC resolution
 
@@ -150,7 +177,7 @@ TODO: personal project abstract.
 
 ## Reflection and open questions
 
-- Completed: portfolio structure and the Wokwi ADC/LED experiment with saved evidence.
+- Completed: portfolio structure, the phone auto-rotation chain explanation, and the Wokwi ADC/LED experiment with saved evidence.
 - Remaining: datasheet notes, the other guiding questions, and a personal project abstract.
 - Open question: how real ESP32 ADC noise, offset, and non-linearity differ from this simulation.
 - Verification: checked the circuit against the component pin references, compared the serial
