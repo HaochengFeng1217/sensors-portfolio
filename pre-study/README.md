@@ -4,7 +4,7 @@ Course: HSBI Sensorik und Aktorik, WS 2026/27
 GitHub account: HaochengFeng1217  
 Full name: Haocheng Feng  
 Entry started: 2026-10-20  
-Status: **In progress - Questions 1-4 documented; remaining answers pending.**
+Status: **In progress - Questions 1-5 documented; remaining answers pending.**
 
 ## Preparation log
 
@@ -15,7 +15,8 @@ Status: **In progress - Questions 1-4 documented; remaining answers pending.**
 - Documented the sensor-to-system chain for screen auto-rotation on my iPhone 15 Pro Max.
 - Added manufacturer datasheet notes for VL53L0X and MPR121, including address conventions and specification conditions.
 - Added two hypothetical scale examples to explain accuracy and precision.
-- Questions 5-8 and the remaining preparation checks are still pending.
+- Added an I²C shared-bus explanation, signal diagram, and likely communication problems.
+- Questions 6-8 and the remaining preparation checks are still pending.
 
 ## Completion checklist
 
@@ -153,11 +154,47 @@ Terminology checked against JCGM's International Vocabulary of Metrology:
 
 ## 5. I²C anticipation
 
-Explain how multiple sensors share clock and data wires, what could go wrong,
-and why an address is needed.
+**Initial explanation:** In a single-controller setup, several sensors connect in
+parallel to the same **SDA** data line and **SCL** clock line. They also need a common
+ground and compatible logic levels. Open-drain outputs pull a line low; pull-ups
+restore the high level when it is released.
 
-- Initial explanation: TODO
-- Question to revisit in Module 2: TODO
+The controller starts a transfer and sends a target address with a read/write bit.
+A ready sensor with the matching address acknowledges and participates. The address
+therefore selects the sensor without a separate chip-select wire for every device.
+
+For the two sensors in the [datasheet notes](datasheets.md), the default VL53L0X
+address is **0x29** and the MPR121 address is **0x5A** when ADDR is tied to VSS.
+Both are **7-bit addresses**, so this pair has no address conflict. The exact
+breakout boards' logic levels and pull-ups still need checking before connection.
+
+```mermaid
+flowchart LR
+    MCU["MCU / controller"] --- SDA["Shared SDA"]
+    MCU --- SCL["Shared SCL"]
+    SDA --- VL["VL53L0X: 0x29"]
+    SCL --- VL
+    SDA --- MP["MPR121: 0x5A"]
+    SCL --- MP
+```
+
+This is a signal-topology diagram; power, ground, and pull-up wiring are omitted.
+
+| Possible problem | Why it matters |
+|---|---|
+| Two devices with the same address | Both may respond, so the controller cannot select them independently. A supported address change or separate bus/multiplexer may be needed. |
+| Wrong address convention | Passing an 8-bit address byte to an API expecting a 7-bit address selects the wrong target. |
+| Missing or unsuitable pull-ups | Lines may not rise correctly, or devices may need to sink too much current. Pull-ups already fitted to several boards combine in parallel. |
+| Incompatible logic levels or missing common ground | A valid high/low level may not be recognized; excessive pin voltage can damage a device. |
+| Long wires, high bus capacitance, or excessive clock speed | Signal rise times and timing requirements may no longer be met, causing communication errors. |
+
+**Question to revisit in Module 2:** How should the effective pull-up resistance be
+chosen when several breakout boards already contain pull-ups, and how can the signal
+rise time be checked?
+
+Bus principles checked against NXP's [I²C-bus specification and user manual,
+UM10204, Rev. 7.0, 1 October 2021](https://www.nxp.com/docs/en/user-guide/UM10204.pdf),
+Sections **3.1.1**, **3.1.6**, **3.1.10**, and **7.1**.
 
 ## 6. Actuator choice: small door latch
 
@@ -210,8 +247,8 @@ TODO: personal project abstract.
 
 ## Reflection and open questions
 
-- Completed: portfolio structure, the phone auto-rotation chain explanation, the Wokwi ADC/LED experiment with saved evidence, both sensor datasheet notes, and the accuracy/precision comparison.
-- Remaining: Questions 5-8, including a personal project abstract, and the remaining preparation checks.
+- Completed: portfolio structure, the phone auto-rotation chain explanation, the Wokwi ADC/LED experiment with saved evidence, both sensor datasheet notes, the accuracy/precision comparison, and the I²C shared-bus explanation.
+- Remaining: Questions 6-8, including a personal project abstract, and the remaining preparation checks.
 - Open question: how real ESP32 ADC noise, offset, and non-linearity differ from this simulation.
 - Verification: checked the circuit against the component pin references, compared the serial
   ranges with the ADC API, and tested the output threshold boundaries in the running simulation.
