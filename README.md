@@ -10,8 +10,9 @@ Personal portfolio for HSBI, Campus Gütersloh, WS 2026/27.
 ## Current status
 
 The portfolio is initialized and the Wokwi potentiometer/LED experiment is documented
-with source files, serial readings, and screenshots. Module 0 is still in progress:
-datasheet notes, the remaining guiding questions, and the project abstract are pending.
+with source files, serial readings, and screenshots. Questions 1-3 and the sensor
+datasheet notes are documented. Module 0 is still in progress: Questions 4-8,
+including the project abstract, and the remaining preparation checks are pending.
 The numbered module and reflection files inherited from the template are examples/placeholders.
 
 ## Contents

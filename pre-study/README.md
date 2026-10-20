@@ -4,7 +4,7 @@ Course: HSBI Sensorik und Aktorik, WS 2026/27
 GitHub account: HaochengFeng1217  
 Full name: Haocheng Feng  
 Entry started: 2026-10-20  
-Status: **In progress - Questions 1 and 2 documented; remaining answers pending.**
+Status: **In progress - Questions 1-3 documented; remaining answers pending.**
 
 ## Preparation log
 
@@ -13,7 +13,8 @@ Status: **In progress - Questions 1 and 2 documented; remaining answers pending.
 - Compared 12-bit and 10-bit readings and tested a four-level brightness mapping.
 - Saved the project, source files, serial output, and three screenshots.
 - Documented the sensor-to-system chain for screen auto-rotation on my iPhone 15 Pro Max.
-- Datasheet reading, the remaining guiding questions, and the project abstract are still pending.
+- Added manufacturer datasheet notes for VL53L0X and MPR121, including address conventions and specification conditions.
+- Questions 4-8 and the remaining preparation checks are still pending.
 
 ## Completion checklist
 
@@ -21,7 +22,7 @@ Status: **In progress - Questions 1 and 2 documented; remaining answers pending.
 - [x] Initial pre-study entry structure prepared.
 - [x] Full name added to the portfolio homepage.
 - [ ] Guiding Questions 1-8 answered and understood.
-- [ ] VL53L0X and MPR121 datasheet notes completed, with sources and conditions.
+- [x] VL53L0X and MPR121 datasheet notes completed, with sources and conditions.
 - [x] Wokwi ESP32 potentiometer-to-LED simulation run.
 - [x] ADC resolution changed and actual observations recorded.
 - [x] Coarse threshold/step behaviour tested and described.
@@ -102,13 +103,24 @@ to the same output, so the LED changes abruptly at these thresholds.
 
 ## 3. Datasheet question
 
-Use [the notes for both required sensors](datasheets.md).
-For one sensor, identify its interface, I²C address if relevant, and stated accuracy with conditions.
+**Chosen sensor: VL53L0X.** The [notes for both required sensors](datasheets.md)
+cover their supply, interface, range, resolution, and limitations.
 
-- Chosen sensor: TODO
-- Interface / address and address convention: TODO
-- Accuracy and conditions, or explanation if no single accuracy specification applies: TODO
-- Manufacturer document, revision, and page/section: TODO
+The VL53L0X uses **I²C, up to 400 kHz**. Its default **7-bit address is 0x29**.
+The datasheet writes **0x52** for the address byte used for writing and **0x53** for
+reading; these include the R/W bit (Table 2, p. 3; Section 4, Figure 14, p. 15).
+
+The datasheet characterizes ranging accuracy using **standard deviation**, including
+measurement-to-measurement and part-to-part dispersion. One Table 13 example is
+**4% at 120 cm with a 33 ms timing budget**, for a white target of **88% reflectance**,
+indoors with **no infrared background**. Conditions include **2.8 V**, **23°C**, offset
+correction at **10 cm**, a target covering the full **25° field of view**, and a
+minimum **94% detection rate**. This standard-deviation figure is not a guaranteed
+maximum absolute error for every reading.
+
+Source: STMicroelectronics, [VL53L0X datasheet](https://www.st.com/resource/en/datasheet/vl53l0x.pdf),
+**DS11555, Rev. 6, June 2024**, Section 6.3.1 and Table 13, **p. 23**.
+These are manufacturer specifications; no hardware accuracy measurement has been performed.
 
 ## 4. Accuracy versus precision
 
@@ -177,8 +189,8 @@ TODO: personal project abstract.
 
 ## Reflection and open questions
 
-- Completed: portfolio structure, the phone auto-rotation chain explanation, and the Wokwi ADC/LED experiment with saved evidence.
-- Remaining: datasheet notes, the other guiding questions, and a personal project abstract.
+- Completed: portfolio structure, the phone auto-rotation chain explanation, the Wokwi ADC/LED experiment with saved evidence, and both sensor datasheet notes.
+- Remaining: Questions 4-8, including a personal project abstract, and the remaining preparation checks.
 - Open question: how real ESP32 ADC noise, offset, and non-linearity differ from this simulation.
 - Verification: checked the circuit against the component pin references, compared the serial
   ranges with the ADC API, and tested the output threshold boundaries in the running simulation.
