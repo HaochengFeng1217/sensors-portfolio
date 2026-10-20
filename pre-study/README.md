@@ -4,7 +4,7 @@ Course: HSBI Sensorik und Aktorik, WS 2026/27
 GitHub account: HaochengFeng1217  
 Full name: Haocheng Feng  
 Entry started: 2026-10-20  
-Status: **In progress - Questions 1-3 documented; remaining answers pending.**
+Status: **In progress - Questions 1-4 documented; remaining answers pending.**
 
 ## Preparation log
 
@@ -14,7 +14,8 @@ Status: **In progress - Questions 1-3 documented; remaining answers pending.**
 - Saved the project, source files, serial output, and three screenshots.
 - Documented the sensor-to-system chain for screen auto-rotation on my iPhone 15 Pro Max.
 - Added manufacturer datasheet notes for VL53L0X and MPR121, including address conventions and specification conditions.
-- Questions 4-8 and the remaining preparation checks are still pending.
+- Added two hypothetical scale examples to explain accuracy and precision.
+- Questions 5-8 and the remaining preparation checks are still pending.
 
 ## Completion checklist
 
@@ -124,11 +125,31 @@ These are manufacturer specifications; no hardware accuracy measurement has been
 
 ## 4. Accuracy versus precision
 
-Give two everyday examples and explain the difference in my own words.
+Accuracy concerns how close a measured value is to the true value; in practice,
+a suitable reference value is used for comparison. Precision concerns how closely
+repeated measurements agree under the same specified conditions.
 
-- Precise but inaccurate: TODO
-- Accurate but imprecise: TODO
-- Explanation: TODO
+The following everyday examples are hypothetical.
+
+- **Precise but inaccurate:** A bathroom scale is checked with a reference load
+  of **20.0 kg**. It repeatedly displays **22.0 kg, 22.0 kg, and 22.0 kg**.
+  The displayed readings agree closely, but they are all **2.0 kg too high**.
+  A consistent offset can therefore give repeatable readings that are wrong.
+- **Accurate but imprecise, in the everyday sense of correct on average:** Suppose
+  a kitchen scale's readings are scattered around a **100 g** reference mass.
+  Example readings are **95 g, 100 g, and 105 g**. Their mean is **100 g**, but
+  the individual readings vary widely, so repeatability is poor.
+
+In simple terms, accuracy asks "How close is the result to the reference?" and
+precision asks "How close are the repeated results to each other?" Strictly, the
+second example illustrates good trueness with low precision, assuming the long-run
+mean remains near the reference. One correct sample mean does not establish the
+instrument's accuracy or make every individual reading accurate.
+
+Terminology checked against JCGM's International Vocabulary of Metrology:
+[accuracy, 2.13](https://jcgm.bipm.org/vim/en/2.13.html),
+[trueness, 2.14](https://jcgm.bipm.org/vim/en/2.14.html), and
+[precision, 2.15](https://jcgm.bipm.org/vim/en/2.15.html).
 
 ## 5. I²C anticipation
 
@@ -189,8 +210,8 @@ TODO: personal project abstract.
 
 ## Reflection and open questions
 
-- Completed: portfolio structure, the phone auto-rotation chain explanation, the Wokwi ADC/LED experiment with saved evidence, and both sensor datasheet notes.
-- Remaining: Questions 4-8, including a personal project abstract, and the remaining preparation checks.
+- Completed: portfolio structure, the phone auto-rotation chain explanation, the Wokwi ADC/LED experiment with saved evidence, both sensor datasheet notes, and the accuracy/precision comparison.
+- Remaining: Questions 5-8, including a personal project abstract, and the remaining preparation checks.
 - Open question: how real ESP32 ADC noise, offset, and non-linearity differ from this simulation.
 - Verification: checked the circuit against the component pin references, compared the serial
   ranges with the ADC API, and tested the output threshold boundaries in the running simulation.
