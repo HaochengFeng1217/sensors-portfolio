@@ -154,6 +154,5 @@ TODO: personal project abstract.
 - [Portfolio template](https://github.com/iotempire/iot-portfolio-template)
 
 The PDF names this file `pre-study/README.md` (or `00-pre-study.md`).
-The current template uses `PreStudy/README.md`, which links here.
 The uploaded PDFs and live workbook differ on preparation time and checkpoint timing;
 confirm the arrangement for this cohort in the LMS or with the instructor.

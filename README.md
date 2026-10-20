@@ -16,7 +16,6 @@ The numbered module and reflection files inherited from the template are example
 ## Contents
 
 - [Module 0: Pre-study](pre-study/README.md)
-- [Template pre-study entry point](PreStudy/README.md)
 - [Module 1: template example, not completed work](Module01/README.md)
 - [Module 2: template example, not completed work](Module02/README.md)
 - [New module template](ModuleNN.md)
@@ -31,8 +30,6 @@ The numbered module and reflection files inherited from the template are example
 
 The uploaded LMS PDFs are dated 2026-09-25, revision 31aa6ca.
 The live workbook can change; local scheduling and announcements come from the course LMS.
-The uploaded guide uses `pre-study/README.md`; the current template uses `PreStudy/README.md`.
-Both entry points lead to the same notes in this repository.
 
 ## Documentation
 
