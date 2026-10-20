@@ -4,7 +4,7 @@ Course: HSBI Sensorik und Aktorik, WS 2026/27
 GitHub account: HaochengFeng1217  
 Full name: Haocheng Feng  
 Entry started: 2026-10-20  
-Status: **In progress - Questions 1-6 documented; remaining answers pending.**
+Status: **In progress - Questions 1-7 documented; project abstract pending.**
 
 ## Preparation log
 
@@ -17,7 +17,8 @@ Status: **In progress - Questions 1-6 documented; remaining answers pending.**
 - Added two hypothetical scale examples to explain accuracy and precision.
 - Added an I²C shared-bus explanation, signal diagram, and likely communication problems.
 - Added an actuator choice for a small lever-operated latch, with assumptions and a torque-sizing example.
-- Questions 7-8 and the remaining preparation checks are still pending.
+- Added the full-white LED current/power calculation and a supply-sizing example.
+- Question 8 and the remaining preparation checks are still pending.
 
 ## Completion checklist
 
@@ -236,12 +237,33 @@ latch needs a direct linear stroke or continuous holding force.
 
 ## 7. LED power calculation
 
-Use the guide's assumption of 30 WS2812 LEDs, each up to approximately 60 mA at full white.
-This is a calculation, not a current measurement.
+Using the guide's full-white assumption of **30 WS2812 LEDs**, each drawing up to
+approximately **60 mA**, the design estimate is:
 
-- Calculation with units: TODO
-- Required supply capability and practical margin: TODO
-- Why the microcontroller's 5 V pin is unsuitable for this load: TODO
+```text
+Maximum LED current = 30 × 60 mA = 1800 mA = 1.8 A
+LED input power at 5 V = 5 V × 1.8 A = 9 W
+```
+
+**Supply capability and margin:** The LEDs alone require approximately **1.8 A at
+5 V** under this assumption. A regulated **5 V, 3 A** supply, rated for **15 W**
+output, is an example that provides headroom. Add the controller and any other
+loads to the budget if they share that supply. The current rating is the supply's
+capacity; the LEDs draw the current required by their operating state.
+
+**Why use a separate power path:** A board's **5 V** label identifies a voltage,
+not a guarantee that its power path can carry **1.8 A** for the LEDs. USB input,
+protection, regulators, connectors, and PCB traces have board-specific limits.
+Without confirming those limits, routing this load through the board could overload
+its power path. Feed the strip's power connections directly from the appropriately
+rated external supply, connect its ground to MCU ground, and use the MCU for the
+data signal.
+
+The **60 mA** figure is the course's sizing assumption; actual current depends on
+the LED version, color, and brightness. Check the particular strip's specifications
+and measure its consumption when building the circuit.
+[Adafruit's NeoPixel power guide](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels)
+explains the full-white estimate, power-supply headroom, and power distribution.
 
 ## 8. Project abstract
 
@@ -276,8 +298,8 @@ TODO: personal project abstract.
 
 ## Reflection and open questions
 
-- Completed: portfolio structure, Questions 1-6, the Wokwi ADC/LED experiment with saved evidence, and both sensor datasheet notes.
-- Remaining: Questions 7-8, including a personal project abstract, and the remaining preparation checks.
+- Completed: portfolio structure, Questions 1-7, the Wokwi ADC/LED experiment with saved evidence, and both sensor datasheet notes.
+- Remaining: Question 8 (personal project abstract) and the remaining preparation checks.
 - Open question: how real ESP32 ADC noise, offset, and non-linearity differ from this simulation.
 - Verification: checked the circuit against the component pin references, compared the serial
   ranges with the ADC API, and tested the output threshold boundaries in the running simulation.
