@@ -2,7 +2,7 @@
 
 Course: HSBI Sensorik und Aktorik, WS 2026/27  
 GitHub account: HaochengFeng1217  
-Full name: TODO  
+Full name: Haocheng Feng
 Entry started: 2026-10-20  
 Status: **Draft - structure prepared; exercises and personal answers pending.**
 
