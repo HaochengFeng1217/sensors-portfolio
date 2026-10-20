@@ -1,3 +1,5 @@
+> **Template example / placeholder only. No personal completion or evidence is claimed in this file.**
+
 # Module 2
 
 > **Example module** from the IoT introduction class. Adjust the headings and tasks to match your actual course content.

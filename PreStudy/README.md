@@ -1,18 +1,7 @@
-# Pre-study (optional)
+# Module 0: Pre-study
 
-> **Optional:** not all classes have a pre-study. If your class does not, delete this folder
-> and remove it from the table of contents.
->
-> When you start editing this file, remove this description.
->
-> Complete the pre-study tasks from your course workbook before Day 1.
-> Add your notes, datasheet findings, simulation screenshots, and project abstract here.
-> This is the evidence for the pre-study point; the full task list is in the course workbook.
+The course-specific entry is [pre-study/README.md](../pre-study/README.md).
 
-## Task Pre-study notes
-
-## Task Datasheet reading
-
-## Task Simulation
-
-## Task Project abstract
+This entry point preserves the original template path. The notes, guiding questions,
+datasheet reading, Wokwi evidence plan, and project abstract are maintained in that single file.
+Module 0 is required for this course; the generic template's "optional" label does not apply.

@@ -1,3 +1,5 @@
+> **Template example / placeholder only. No personal completion or evidence is claimed in this file.**
+
 # Reflection 1
 
 > This is the only reflection file that spells out the prompts. fill in the [short description here]
