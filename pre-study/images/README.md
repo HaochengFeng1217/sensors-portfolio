@@ -1,10 +1,9 @@
 # Pre-study evidence images
 
-No evidence images have been captured yet.
+Captured from the running Wokwi experiment on 2026-10-21.
 
-After running the simulation, save actual images here, for example:
-- `wokwi-circuit.png`
-- `wokwi-serial.png`
+- [wokwi-adc12.png](wokwi-adc12.png): circuit and 12-bit ADC readings.
+- [wokwi-adc10.png](wokwi-adc10.png): circuit and 10-bit ADC readings.
+- [wokwi-coarse4.png](wokwi-coarse4.png): the four output levels and threshold crossings.
 
-Add working image links to ../README.md only after the files exist.
-Label the ADC setting and observation conditions.
+[Experiment notes and source](../wokwi/README.md)

@@ -9,8 +9,9 @@ Personal portfolio for HSBI, Campus Gütersloh, WS 2026/27.
 
 ## Current status
 
-Initial structure and a first pre-study entry are prepared. Module 0 is still in progress.
-No completed simulation, measurement, hardware checkout, or project demonstration is claimed.
+The portfolio is initialized and the Wokwi potentiometer/LED experiment is documented
+with source files, serial readings, and screenshots. Module 0 is still in progress:
+datasheet notes, the remaining guiding questions, and the project abstract are pending.
 The numbered module and reflection files inherited from the template are examples/placeholders.
 
 ## Contents
