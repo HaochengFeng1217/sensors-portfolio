@@ -1,0 +1,64 @@
+[
+  {
+    "file": "sweep-00",
+    "capturedAt": "2026-10-25T17:53:16.201Z",
+    "lastRow": "18:53:15.948 ->  Bits:10,Raw:27,NominalV:0.0870,Min:0,Max:1023,Unique:41",
+    "error": false
+  },
+  {
+    "file": "sweep-01",
+    "capturedAt": "2026-10-25T17:53:19.327Z",
+    "lastRow": "18:53:19.065 ->  Bits:10,Raw:202,NominalV:0.6510,Min:0,Max:1023,Unique:71",
+    "error": false
+  },
+  {
+    "file": "sweep-02",
+    "capturedAt": "2026-10-25T17:53:22.449Z",
+    "error": false
+  },
+  {
+    "file": "sweep-03",
+    "capturedAt": "2026-10-25T17:53:25.579Z",
+    "error": false
+  },
+  {
+    "file": "sweep-04",
+    "capturedAt": "2026-10-25T17:53:28.697Z",
+    "error": false
+  },
+  {
+    "file": "sweep-05",
+    "capturedAt": "2026-10-25T17:53:31.816Z",
+    "error": false
+  },
+  {
+    "file": "sweep-06",
+    "capturedAt": "2026-10-25T17:53:34.935Z",
+    "error": false
+  },
+  {
+    "file": "sweep-07",
+    "capturedAt": "2026-10-25T17:53:38.062Z",
+    "error": false
+  },
+  {
+    "file": "sweep-08",
+    "capturedAt": "2026-10-25T17:53:41.182Z",
+    "error": false
+  },
+  {
+    "file": "sweep-09",
+    "capturedAt": "2026-10-25T17:53:44.301Z",
+    "error": false
+  },
+  {
+    "file": "sweep-10",
+    "capturedAt": "2026-10-25T17:53:47.435Z",
+    "error": false
+  },
+  {
+    "file": "sweep-11",
+    "capturedAt": "2026-10-25T17:53:50.552Z",
+    "error": false
+  }
+]

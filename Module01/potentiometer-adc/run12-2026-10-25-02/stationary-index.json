@@ -1,0 +1,38 @@
+[
+  {
+    "file": "stationary-live-00",
+    "capturedAt": "2026-10-25T17:51:41.798Z",
+    "firstRow": "18:51:40.615 ->  Bits:12,Raw:1646,NominalV:1.3261,Min:1614,Max:1663,Unique:32",
+    "lastRow": "18:51:41.503 ->  Bits:12,Raw:1639,NominalV:1.3205,Min:1614,Max:1663,Unique:32"
+  },
+  {
+    "file": "stationary-live-01",
+    "capturedAt": "2026-10-25T17:51:42.918Z",
+    "firstRow": "18:51:41.800 ->  Bits:12,Raw:1641,NominalV:1.3221,Min:1614,Max:1663,Unique:32",
+    "lastRow": "18:51:42.694 ->  Bits:12,Raw:1632,NominalV:1.3148,Min:1614,Max:1663,Unique:32"
+  },
+  {
+    "file": "stationary-live-02",
+    "capturedAt": "2026-10-25T17:51:44.042Z",
+    "firstRow": "18:51:42.958 ->  Bits:12,Raw:1644,NominalV:1.3245,Min:1614,Max:1663,Unique:32",
+    "lastRow": "18:51:43.844 ->  Bits:12,Raw:1644,NominalV:1.3245,Min:1614,Max:1663,Unique:34"
+  },
+  {
+    "file": "stationary-live-03",
+    "capturedAt": "2026-10-25T17:51:45.165Z",
+    "firstRow": "18:51:44.105 ->  Bits:12,Raw:1649,NominalV:1.3285,Min:1614,Max:1663,Unique:35",
+    "lastRow": "18:51:44.996 ->  Bits:12,Raw:1661,NominalV:1.3382,Min:1614,Max:1663,Unique:36"
+  },
+  {
+    "file": "stationary-live-04",
+    "capturedAt": "2026-10-25T17:51:46.292Z",
+    "firstRow": "18:51:45.062 ->  Bits:12,Raw:1637,NominalV:1.3189,Min:1614,Max:1663,Unique:36",
+    "lastRow": "18:51:45.952 ->  Bits:12,Raw:1645,NominalV:1.3253,Min:1614,Max:1663,Unique:36"
+  },
+  {
+    "file": "stationary-live-05",
+    "capturedAt": "2026-10-25T17:51:47.416Z",
+    "firstRow": "18:51:46.248 ->  Bits:12,Raw:1668,NominalV:1.3438,Min:1614,Max:1668,Unique:38",
+    "lastRow": "18:51:47.137 ->  Bits:12,Raw:1639,NominalV:1.3205,Min:1614,Max:1668,Unique:38"
+  }
+]

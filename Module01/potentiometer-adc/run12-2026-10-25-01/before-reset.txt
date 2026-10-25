@@ -1,0 +1,14 @@
+							71 text 18:34:35.282 ->  Bits:12,Raw:1923,NominalV:1.5493,Min:0,Max:4095,Unique:898
+							73 text 18:34:35.314 ->  Bits:12,Raw:1997,NominalV:1.6089,Min:0,Max:4095,Unique:898
+							75 text 18:34:35.381 ->  Bits:12,Raw:1926,NominalV:1.5517,Min:0,Max:4095,Unique:898
+							77 text 18:34:35.413 ->  Bits:12,Raw:1958,NominalV:1.5775,Min:0,Max:4095,Unique:898
+							79 text 18:34:35.480 ->  Bits:12,Raw:1984,NominalV:1.5984,Min:0,Max:4095,Unique:898
+							81 text 18:34:35.512 ->  Bits:12,Raw:1968,NominalV:1.5855,Min:0,Max:4095,Unique:898
+							83 text 18:34:35.578 ->  Bits:12,Raw:1936,NominalV:1.5598,Min:0,Max:4095,Unique:898
+							85 text 18:34:35.610 ->  Bits:12,Raw:1951,NominalV:1.5719,Min:0,Max:4095,Unique:898
+							87 text 18:34:35.676 ->  Bits:12,Raw:1963,NominalV:1.5815,Min:0,Max:4095,Unique:898
+							89 text 18:34:35.708 ->  Bits:12,Raw:1949,NominalV:1.5702,Min:0,Max:4095,Unique:898
+							91 text 18:34:35.774 ->  Bits:12,Raw:1952,NominalV:1.5727,Min:0,Max:4095,Unique:899
+							93 text 18:34:35.806 ->  Bits:12,Raw:1959,NominalV:1.5783,Min:0,Max:4095,Unique:899
+							95 text 18:34:35.873 ->  Bits:12,Raw:1904,NominalV:1.5340,Min:0,Max:4095,Unique:899
+							97 text 18:34:35.905 ->  Bits:12,Raw:2054,NominalV:1.6548,Min:0,Max:4095,Unique:899

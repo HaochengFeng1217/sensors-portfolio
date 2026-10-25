@@ -1,0 +1,13 @@
+{
+  "bits": 10,
+  "n": 114,
+  "first": "18:52:10.317",
+  "last": "18:52:16.796",
+  "minimum": 402,
+  "maximum": 417,
+  "mean": 409.7368421052632,
+  "std_population": 2.0818877717993103,
+  "running_min_last": 402,
+  "running_max_last": 417,
+  "running_unique_last": 16
+}

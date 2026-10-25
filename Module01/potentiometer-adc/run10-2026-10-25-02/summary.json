@@ -1,0 +1,13 @@
+{
+  "date_local": "2026-10-25",
+  "timezone": "Europe/Berlin",
+  "bits": 10,
+  "saved_complete_rows": 341,
+  "first_saved_receive_time": "18:58:10.876",
+  "last_saved_receive_time": "18:58:47.890",
+  "last_running_min": 0,
+  "last_running_max": 1023,
+  "last_running_unique": 257,
+  "observed_sample_min": 0,
+  "observed_sample_max": 1023
+}

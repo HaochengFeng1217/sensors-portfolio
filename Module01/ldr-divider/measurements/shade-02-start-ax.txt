@@ -1,0 +1,12 @@
+The following is a diff from the previous accessibility tree for Window: "ldr-divider | Arduino IDE 2.3.10" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
++					84 container
++						85 container
++							86 text 19:18:37.654 ->  BEGIN,Shade,2
+
++						87 container
++							88 text 19:18:37.654 ->  Type,Condition,Trial,Sample,Elapsed_ms,Raw,ADC_mV
+
++						89 container
++							90 text 19:18:37.949 ->  DATA,Shade,2,1,245943,1169,1087
+
+The focused UI element is 52 text field (settable) Message (Enter to send message to 'ESP32 Dev Module' on '/dev/cu.usbserial-0001')

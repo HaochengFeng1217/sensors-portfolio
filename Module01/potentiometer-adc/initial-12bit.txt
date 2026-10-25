@@ -1,0 +1,12 @@
+Bits:12,Raw:2212,NominalV:1.7821,Min:0,Max:4095,Unique:181
+Bits:12,Raw:2224,NominalV:1.7918,Min:0,Max:4095,Unique:182
+Bits:12,Raw:2307,NominalV:1.8587,Min:0,Max:4095,Unique:183
+Bits:12,Raw:2175,NominalV:1.7523,Min:0,Max:4095,Unique:184
+Bits:12,Raw:2077,NominalV:1.6734,Min:0,Max:4095,Unique:185
+Bits:12,Raw:1920,NominalV:1.5469,Min:0,Max:4095,Unique:186
+Bits:12,Raw:1773,NominalV:1.4284,Min:0,Max:4095,Unique:187
+Bits:12,Raw:1618,NominalV:1.3036,Min:0,Max:4095,Unique:188
+Bits:12,Raw:1459,NominalV:1.1755,Min:0,Max:4095,Unique:189
+Bits:12,Raw:1316,NominalV:1.0603,Min:0,Max:4095,Unique:190
+Bits:12,Raw:1162,NominalV:0.9362,Min:0,Max:4095,Unique:191
+Bits:12,Raw:905,NominalV:0.7291,Min:0,Max:4095,Unique:192

@@ -1,0 +1,128 @@
+[
+  {
+    "file": "capture-00",
+    "capturedAt": "2026-10-25T17:58:12.044Z",
+    "lastRow": "18:58:11.764 ->  Bits:10,Raw:1023,NominalV:3.2968,Min:0,Max:1023,Unique:45",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-01",
+    "capturedAt": "2026-10-25T17:58:14.166Z",
+    "lastRow": "18:58:13.937 ->  Bits:10,Raw:840,NominalV:2.7070,Min:0,Max:1023,Unique:49",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-02",
+    "capturedAt": "2026-10-25T17:58:16.293Z",
+    "lastRow": "18:58:16.071 ->  Bits:10,Raw:532,NominalV:1.7145,Min:0,Max:1023,Unique:76",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-03",
+    "capturedAt": "2026-10-25T17:58:18.411Z",
+    "lastRow": "18:58:18.211 ->  Bits:10,Raw:202,NominalV:0.6510,Min:0,Max:1023,Unique:113",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-04",
+    "capturedAt": "2026-10-25T17:58:20.530Z",
+    "lastRow": "18:58:20.376 ->  Bits:10,Raw:0,NominalV:0.0000,Min:0,Max:1023,Unique:133",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-05",
+    "capturedAt": "2026-10-25T17:58:22.648Z",
+    "lastRow": "18:58:22.511 ->  Bits:10,Raw:12,NominalV:0.0387,M",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-06",
+    "capturedAt": "2026-10-25T17:58:24.775Z",
+    "lastRow": "18:58:24.484 ->  Bits:10,Raw:261,NominalV:0.8411,Min:0,Max:1023,Unique:165",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-07",
+    "capturedAt": "2026-10-25T17:58:26.899Z",
+    "lastRow": "18:58:26.621 ->  Bits:10,Raw:615,NominalV:1.9819,Min:0,Max:1023,Unique:194",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-08",
+    "capturedAt": "2026-10-25T17:58:29.019Z",
+    "lastRow": "18:58:28.786 ->  Bits:10,Raw:1023,NominalV:3.2968,Min:0,Max:1023,Unique:211",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-09",
+    "capturedAt": "2026-10-25T17:58:31.144Z",
+    "lastRow": "18:58:30.921 ->  Bits:10,Raw:517,NominalV:1.6661,Min:0,Max:1023,Unique:232",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-10",
+    "capturedAt": "2026-10-25T17:58:33.264Z",
+    "lastRow": "18:58:33.021 ->  Bits:10,Raw:364,NominalV:1.1730,Min:0,Max:1023,Unique:246",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-11",
+    "capturedAt": "2026-10-25T17:58:35.383Z",
+    "lastRow": "18:58:35.190 ->  Bits:10,Raw:366,NominalV:1.1795,Min:0,Max:1023,Unique:247",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-12",
+    "capturedAt": "2026-10-25T17:58:37.502Z",
+    "lastRow": "18:58:37.330 ->  Bits:10,Raw:363,NominalV:1.1698,Min:0,Max:1023,Unique:251",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-13",
+    "capturedAt": "2026-10-25T17:58:39.615Z",
+    "lastRow": "18:58:39.465 ->  Bits:10,Raw:364,NominalV:1.1730,Min:0,Max:1023,Unique:255",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-14",
+    "capturedAt": "2026-10-25T17:58:41.735Z",
+    "lastRow": "18:58:41.567 ->  Bits:10,Raw:368,NominalV:1.1859,Min:0,Max:1023,Unique:256",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-15",
+    "capturedAt": "2026-10-25T17:58:43.853Z",
+    "lastRow": "18:58:43.561 ->  Bits:10,Raw:366,NominalV:1.1795,Min:0,Max:1023,Unique:256",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-16",
+    "capturedAt": "2026-10-25T17:58:45.969Z",
+    "lastRow": "18:58:45.724 ->  Bits:10,Raw:360,NominalV:1.1602,Min:0,Max:1023,Unique:256",
+    "changedResolution": false,
+    "disconnected": false
+  },
+  {
+    "file": "capture-17",
+    "capturedAt": "2026-10-25T17:58:48.095Z",
+    "lastRow": "18:58:47.890 ->  Bits:10,Raw:361,NominalV:1.1634,Min:0,Max:1023,Unique:257",
+    "changedResolution": false,
+    "disconnected": false
+  }
+]

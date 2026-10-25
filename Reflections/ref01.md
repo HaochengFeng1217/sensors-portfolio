@@ -1,3 +1,5 @@
+> **Experiment records:** [Module 1 — Tasks 1–4](../Module01/README.md), including the [Task 4 LDR report](../Module01/ldr-divider/README.md). Personal reflection below remains pending.
+
 > **Template example / placeholder only. No personal completion or evidence is claimed in this file.**
 
 # Reflection 1
