@@ -87,6 +87,54 @@ An LDR is nonlinear, temperature-dependent and relatively slow when illumination
 | Room | 3 | 10 | 3389–3436 | 3403.5 | 2.791–2.814 | 2.8045 |
 | Room | 4 | 10 | 3392–3439 | 3406.0 | 2.800–2.820 | 2.8070 |
 
+## Screenshot evidence
+
+These are original Serial Monitor captures from the recorded hardware trials. The condition labels reflect the lighting established by the student. Values in the DATA rows and END summaries correspond to the readings and trial tables above. ADC_mV remains an ADC estimate, not an external meter reading.
+
+### Upload verification
+
+![Firmware upload completed and written data hash verified](upload-result.png)
+
+### Initial room light — trials 1 and 2
+
+![Initial room light, trial 1, enlarged monitor capture](measurements/room-01-full.png)
+
+![Initial room light, trial 2](measurements/room-02.png)
+
+The trial means were 3412.6 and 3402.9 raw codes, with mean ADC voltage estimates of 2.8084 V and 2.8014 V.
+
+### Partial shade — trial 2
+
+![Partial shade, trial 2](measurements/shade-02.png)
+
+This trial's raw range was 1163–1187. The mean ADC voltage estimate was 1.0827 V.
+
+### Initial covering attempt — trial 2
+
+![Initial covering attempt with substantial variation](measurements/dark-02.png)
+
+This attempt produced a higher signal than the shade setup and a raw range of 1667–1951. It is retained as evidence of an inconsistent covering procedure; it is not treated as a verified darker light level than Shade.
+
+### Revised dark covering — trial 4
+
+![Revised covering reached the lower ADC code limit](measurements/dark-04.png)
+
+All ten raw readings were 0, as in trial 3. The repeated 142 mV output from the ADC routine is an endpoint result, not an independently verified 0.142 V input. No resistance estimate is based on it.
+
+### Phone flashlight — trials 1 and 2
+
+![Phone flashlight, trial 1](measurements/flashlight-01.png)
+
+![Phone flashlight, trial 2](measurements/flashlight-02.png)
+
+The mean raw codes were 3742.4 and 3753.5; mean ADC voltage estimates were 2.9835 V and 2.9872 V. Distance and angle were held approximately fixed by the student, without independent measurement.
+
+### Restored room light — trial 4
+
+![Room light restored after the other lighting conditions](measurements/room-04.png)
+
+The mean raw code was 3406.0, close to the initial room-light trials. This supports approximate repeatability within this session; it does not establish voltage accuracy.
+
 ## Evidence and reproducibility
 
 - [Firmware](ldr-divider.ino)

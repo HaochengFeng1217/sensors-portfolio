@@ -113,3 +113,37 @@ Eighteen screenshots were saved over approximately 36 seconds. Every saved captu
 The running statistics cover approximately 50 seconds since selecting L, longer than screenshot acquisition. The 341 saved complete serial rows are intermittent visible excerpts, not a continuous record of all conversions. The earlier unexpected return to 12 bits did not recur in the saved windows of this repeat; its cause has not been isolated.
 
 The 12-bit and 10-bit hardware comparison is now documented. Independent voltage comparison, calibrated accuracy and quantitative linearity measurements have not been completed.
+
+## Screenshot evidence
+
+The following original captures show selected stages of the hardware experiment. Each screenshot is a visible monitor window; the capture sets and CSV files preserve the time coverage and limitations. The running Min, Max and Unique fields can cover a longer interval than the currently visible rows.
+
+### 12-bit manipulation: intermediate values and upper endpoint
+
+![12-bit readings during potentiometer manipulation](run12-2026-10-25-02/capture-04.png)
+
+![12-bit upper endpoint observed during manipulation](run12-2026-10-25-02/capture-10.png)
+
+These separate windows show intermediate readings and the representable upper endpoint. They do not establish a calibrated voltage or a linear response to knob angle.
+
+### Fixed-position comparison at 12 and 10 bits
+
+![12-bit stationary capture](run12-2026-10-25-02/stationary-live-05.png)
+
+![10-bit stationary capture at the requested unchanged position](run10-2026-10-25-01/stationary-live-05.png)
+
+The student was instructed to hold the same position. The output code scale changes with resolution; different fluctuations in code units do not by themselves show different voltage accuracy.
+
+### Repeat 10-bit manipulation: upper and lower endpoints
+
+![10-bit upper endpoint in the successful repeat](run10-2026-10-25-02/capture-00.png)
+
+![10-bit lower endpoint in the successful repeat](run10-2026-10-25-02/capture-04.png)
+
+### Repeat 10-bit manipulation: intermediate values and final statistics
+
+![Intermediate 10-bit readings while the knob was manipulated](run10-2026-10-25-02/capture-02.png)
+
+![Final saved 10-bit repeat statistics](run10-2026-10-25-02/capture-17.png)
+
+The final running statistics were Min = 0, Max = 1023 and Unique = 257. Unique counts codes sampled since reset; it is not the ADC's effective resolution. All 18 saved windows of this repeat retained 10-bit output.

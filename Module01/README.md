@@ -14,6 +14,14 @@ This page collects the actual hardware experiment records through Task 4. Report
 | Task 3 — Potentiometer ADC | [Report](potentiometer-adc/README.md) · [Code](potentiometer-adc/potentiometer-adc.ino) | 12-bit and 10-bit manipulation records and stationary comparisons; interrupted attempts retained. No independent multimeter voltage comparison. |
 | Task 4 — LDR divider | [Report](ldr-divider/README.md) · [Code](ldr-divider/ldr-divider.ino) · [All readings](ldr-divider/measurements/readings.csv) | Circuit photograph, four qualitative light conditions, 12 trials / 120 readings, repeatability comparison and one approximate resistance calculation. Initial covering attempts are retained and explained. |
 
+## Screenshot galleries
+
+- [LED bring-up screenshot](led-blink/README.md#screenshot-evidence)
+- [Task 1 wiring and serial counter screenshots](button-debounce/README.md)
+- [Task 2 baseline and button-transition plots](serial-plotter/README.md)
+- [Task 3 ADC movement, endpoints and stationary comparisons](potentiometer-adc/README.md#screenshot-evidence)
+- [Task 4 upload, lighting conditions and repeat measurements](ldr-divider/README.md#screenshot-evidence)
+
 ## Task 3 capture sets
 
 - [12-bit manipulation and recovered stationary readings](potentiometer-adc/run12-2026-10-25-02/README.md)
