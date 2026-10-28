@@ -35,3 +35,16 @@ These notes summarize the material supplied by the groups. Additional pitches ca
 - **Examples:** Industrial PLCs, meters, motor drives and sensors. Two ESP32s could implement RTU in software with RS-485 transceivers; the group did not confirm a specific kit demonstration.
 - **Debugging:** For no reply, check the device address, baud rate, parity, data wiring, common reference, termination and biasing. Inspect frames and CRC and measure line signals where possible.
 - **Sources named by the group:** Modbus Organization introduction and Modbus Serial Line Specification V1.02; Texas Instruments material on RS-485 termination. Consult the original documents for details.
+
+## CAN (Controller Area Network)
+
+- **Background:** The group reported that Bosch developed CAN for communication between automotive controllers, with substantial protocol development in 1984 and a public presentation in 1986.
+- **Wiring and signaling:** High-speed CAN commonly uses a twisted CANH/CANL pair and an appropriate common reference. A transceiver converts controller logic to differential bus signals. Dominant 0 overrides recessive 1; connector pinouts depend on the application.
+- **Topology and arbitration:** CAN is a multi-master broadcast bus, usually a linear trunk with short stubs. Message identifiers indicate content and priority rather than inherently naming a destination. Within the same frame format, a lower identifier wins arbitration. A node that loses stops transmitting without damaging the winning frame.
+- **Speed and distance:** Classical CAN supports up to 1 Mbit/s. The group cited 40 m at 1 Mbit/s as a theoretical example, not a guaranteed limit; propagation, transceivers, cable, stubs and bit timing affect the network.
+- **Classical CAN and CAN FD:** Classical CAN carries up to 8 data bytes; CAN FD supports up to 64 and can use a faster data phase with compatible hardware. The group noted that the classic ESP32 TWAI controller supports Classical CAN, not CAN FD.
+- **Compared with SPI and RS-485:** CAN includes arbitration, framing and error handling. SPI normally uses a shared clock and separate chip-select lines; RS-485 specifies differential electrical signaling and needs a protocol for message rules.
+- **Examples:** Automotive controllers, industrial drives, robotics and distributed sensors. The group's proposed classic ESP32 plus SN65HVD230 transceiver example was marked untested.
+- **Debugging:** Check power and mode, CANH/CANL, the common reference, matching bit timing and termination at both ends. A single node or listen-only peer cannot supply the external acknowledgement needed for a normal transmission. Inspect error flags or use a CAN analyzer.
+- **Remarkable feature:** A CAN acknowledgement means a node received the frame correctly; it does not prove that an application processed the message.
+- **Sources named by the group:** CAN in Automation history, CAN CC and physical-layer materials; TI SN65HVD230 datasheet; Bosch CAN FD information.
