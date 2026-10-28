@@ -1,63 +1,17 @@
-> **Template example / placeholder only. No personal completion or evidence is claimed in this file.**
+# Module 2: Buses and I2C
 
-# Module 2
+Student: Haocheng Feng. Started: 28 October 2026.
 
-> **Example module** from the IoT introduction class. Adjust the headings and tasks to match your actual course content.
+## Task 1: Simple pins, PWM, UART and a divider
 
-We are going to show here notes for Task 1, 2, 3, 4, and 5 to prove
+[Classification table, calculations and UART notes](pins-and-dividers.md) · [UART loopback firmware](uart-loopback/uart-loopback.ino)
 
-## Learning Goals
+The conceptual notes and proposed divider calculation are prepared. UART loopback firmware compiled and uploaded for the classic ESP32. One hardware string test passed with matching TX and RX output; the [screenshot](uart-loopback/evidence/loopback-01.png) and [text](uart-loopback/evidence/observed-loopback.txt) are saved. The student has obtained a multimeter and recorded a 3.316 V divider-input reading. Divider output and the 5 V-input scenario have not yet been measured. Task 1 is not yet complete.
 
-> Copy the module's learning goals from the course workbook. Keep the `LG1`, `LG2`, … IDs and a one-word keyword; under each goal, link to the task that proves it.
+## Task 2: Bus survey and pitch — in progress
 
-<a id="lg1"></a>
-### LG1 — `<keyword>`
+The instructor directed the class to begin Task 2 before the divider output was measured. The student identified SPI as the assigned bus. A sourced [SPI profile](bus-spi.md) and [research questions with source checks](bus-spi-research.md) have been prepared. The physical kit example, device-specific settings, pod discussion and presentation remain to be verified or recorded.
 
-<copy the goal here>
+All pods should be ready to explain I2C open-drain signaling and pull-ups: devices pull a shared line low or release it, while a pull-up supplies its high state. The pull-up voltage and current must be compatible with the connected devices. This is a study note, not a claim that an I2C circuit or a pod discussion has been completed.
 
-**Evidence:** [Task 1](#task-1)
-
-<a id="lg2"></a>
-### LG2 — `<keyword>`
-
-<copy the goal here>
-
-**Evidence:** [Task 2](#task-2)
-
-<a id="lg3"></a>
-### LG3 — `<keyword>`
-
-<copy the goal here>
-
-**Evidence:** [Task 3](#task-3)
-
-<a id="task-1"></a>
-## Task 1 — `<short title>`
-
-**Proves:** [LG1](#lg1)
-
-This task was executed by myself.
-
-<a id="task-2"></a>
-## Task 2 — `<short title>`
-
-**Proves:** [LG2](#lg2)
-
-This task was executed by my partner. The implementation was about ...
-It is [here](https://github.com/partner/iot-portfolio/Module02/README.md#task-2).
-
-<a id="task-3"></a>
-## Task 3 — `<short title>`
-
-**Proves:** [LG3](#lg3)
-
-...
-
-## Reflection 2
-
-[Reflection 2](../Reflections/ref02.md)
-
-If the module is longer than 1 week, you might have several reflections within it. If not, delete this and the following.
-
-## Reflection 3
-[Reflection 3](../Reflections/ref03.md)
+Later Module 2 tasks have not been started in this record.

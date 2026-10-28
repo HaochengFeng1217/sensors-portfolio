@@ -1,0 +1,3 @@
+08:52:12.599 ->  TX UART2@9600: HSBI UART loopback test 01
+08:52:12.631 ->  RX UART2@9600: HSBI UART loopback test 01
+08:52:12.631 ->  PASS: received line matches transmitted line
