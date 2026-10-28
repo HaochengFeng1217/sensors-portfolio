@@ -10,7 +10,7 @@ The conceptual notes and proposed divider calculation are prepared. UART loopbac
 
 ## Task 2: Bus survey and pitch — in progress
 
-The instructor directed the class to begin Task 2 before the divider output was measured. The student identified SPI as the assigned bus. A sourced [SPI profile](bus-spi.md) and [research questions with source checks](bus-spi-research.md) have been prepared. The physical kit example, device-specific settings, pod discussion and presentation remain to be verified or recorded.
+The instructor directed the class to begin Task 2 before the divider output was measured. The student identified SPI as the assigned bus. A sourced [SPI profile](bus-spi.md) and [research questions with source checks](bus-spi-research.md) have been prepared. The physical kit example, device-specific settings, pod discussion and presentation remain to be verified or recorded. [Notes from other pods' pitches](other-pods-notes.md) are awaiting the presentations.
 
 All pods should be ready to explain I2C open-drain signaling and pull-ups: devices pull a shared line low or release it, while a pull-up supplies its high state. The pull-up voltage and current must be compatible with the connected devices. This is a study note, not a claim that an I2C circuit or a pod discussion has been completed.
 
