@@ -23,3 +23,15 @@ These notes summarize the material supplied by the groups. Additional pitches ca
 - **Examples:** CNC equipment, networking equipment and scientific instruments. ESP32-to-ESP32 UART at 3.3 V illustrates serial communication but is not itself an RS-232 electrical connection. A suitable RS-232 transceiver is needed between an ESP32 and an RS-232 port.
 - **Debugging:** Check baud rate and serial format, TX/RX routing, common ground and voltage levels. Do not connect RS-232 voltage levels directly to ESP32 GPIO.
 - **Group sources:** [RS-232](https://en.wikipedia.org/wiki/RS-232); [serial cable](https://en.wikipedia.org/wiki/Serial_cable).
+
+## Modbus RTU
+
+- **Background:** The group reported that Modicon created Modbus in 1979 for industrial PLC communication. This date refers to Modbus generally, not a confirmed first release of RTU.
+- **Protocol and electrical interface:** Modbus RTU is an asynchronous serial protocol, not an electrical standard. It commonly runs over RS-485 and can also use RS-232. For an RS-485 connection, an ESP32 needs a suitable transceiver; RTU itself specifies no fixed voltage.
+- **Topology and addressing:** Typically one client/master communicates with multiple servers/slaves. Addresses 1–247 identify devices; address 0 is a broadcast and receives no reply. The number of devices on a physical link can be lower than the address range.
+- **Frames and timing:** A frame contains an address, function, data and CRC-16. The group noted a gap of at least 3.5 character times between frames, with special timing rules above 19,200 bit/s.
+- **Speed and distance:** The group cited 9,600 and 19,200 bit/s, and up to 1,000 m at 9,600 bit/s under the serial-line specification's stated conditions. Wiring, speed and loading affect achievable distance.
+- **Compared with SPI and RS-485:** RS-485 defines electrical signaling; Modbus RTU adds addressing, functions and framing. SPI is typically used for short local connections and normally selects a peripheral with a CS line.
+- **Examples:** Industrial PLCs, meters, motor drives and sensors. Two ESP32s could implement RTU in software with RS-485 transceivers; the group did not confirm a specific kit demonstration.
+- **Debugging:** For no reply, check the device address, baud rate, parity, data wiring, common reference, termination and biasing. Inspect frames and CRC and measure line signals where possible.
+- **Sources named by the group:** Modbus Organization introduction and Modbus Serial Line Specification V1.02; Texas Instruments material on RS-485 termination. Consult the original documents for details.
