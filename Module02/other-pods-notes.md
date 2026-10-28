@@ -48,3 +48,16 @@ These notes summarize the material supplied by the groups. Additional pitches ca
 - **Debugging:** Check power and mode, CANH/CANL, the common reference, matching bit timing and termination at both ends. A single node or listen-only peer cannot supply the external acknowledgement needed for a normal transmission. Inspect error flags or use a CAN analyzer.
 - **Remarkable feature:** A CAN acknowledgement means a node received the frame correctly; it does not prove that an application processed the message.
 - **Sources named by the group:** CAN in Automation history, CAN CC and physical-layer materials; TI SN65HVD230 datasheet; Bosch CAN FD information.
+
+## I²C and I³C
+
+- **Background:** The group described I²C as introduced by Philips in 1982, and I³C as introduced by the MIPI Alliance in 2017 as a faster successor.
+- **Connections:** Both use shared SDA (data) and SCL (clock) signal lines, plus suitable power and ground. The devices' voltage levels must be compatible.
+- **Signaling:** Standard I²C uses open-drain outputs and pull-up resistors: devices pull a line low or release it, and the pull-up brings it high. I³C combines open-drain and push-pull signaling in different phases.
+- **Addressing:** Multiple devices share SDA and SCL. I²C commonly uses 7-bit device addresses and supports multiple controllers with arbitration. I³C supports dynamic address assignment for compatible devices.
+- **Speed and distance:** The group cited common I²C modes of 100 and 400 kbit/s and I³C SDR up to 12.5 Mbit/s, with faster modes also available. Both are mainly for short connections; capacitance, speed and signal quality affect practical length.
+- **Compared with SPI:** I²C uses two shared signal lines and device addresses; SPI typically uses separate data lines and a CS line per peripheral. Common I²C modes are slower, although speed depends on the devices and mode.
+- **Examples:** OLED displays, temperature and motion sensors, and real-time clocks. An ESP32 can share SDA and SCL between compatible I²C sensors; the group did not report a measurement of their particular setup.
+- **Remarkable features:** I³C can assign addresses dynamically and supports in-band interrupts from compatible devices, without a separate interrupt wire.
+- **Debugging:** If an I²C device is missing from a scan, check power, ground, SDA/SCL wiring, voltage compatibility, pull-ups and address conflicts. A device holding SDA low can prevent communication; a logic analyzer can help inspect the lines.
+- **Sources named by the group:** NXP UM10204 I²C-bus Specification and User Manual; MIPI Alliance I³C and I³C Basic specification overview and FAQ. Consult the device datasheets for actual voltage, speed and addressing.
