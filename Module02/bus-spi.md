@@ -1,6 +1,6 @@
 ## Bus profile: SPI
 
-- **History and background:** Motorola developed SPI to connect controllers and peripherals; the introduction year has not been verified. [1]
+- **History and background:** Motorola developed SPI for controller–peripheral communication in the 1980s; a Motorola application note documents SPI in 1987. The exact introduction year is not confirmed. [1][5]
 - **Wires and connectors:** Four signals are shown below, plus common ground and suitable power. Connectors vary. [2]
 
 | Signal | Purpose |
@@ -20,4 +20,4 @@
   - More peripherals normally require more CS pins.
   - There is no universal acknowledgement; check a device-specific ID or status if available. [2]
 - **What can go wrong / how to debug:** Check power, ground, signal wiring, CS, clock polarity and phase, and bit order against the device datasheet. A logic analyzer can show CS, clock and data. [3][4]
-- **Sources and verification:** [1] [NXP: SPI background](https://www.nxp.com/docs/en/supporting-information/design_con_2003_tecforum_i2c_bus_overview.pdf); [2] [Microchip: SPI overview](https://developerhelp.microchip.com/xwiki/bin/view/applications/SPI/); [3] [Espressif: ESP32 SPI](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html); [4] [Analog Devices: clock modes](https://www.analog.com/en/resources/design-notes/interfacing-spi-realtime-clocks-rtcs-with-a-microcontroller.html). Verify settings and limits in the specific device datasheet.
+- **Sources and verification:** [1] [NXP: SPI background](https://www.nxp.com/docs/en/supporting-information/design_con_2003_tecforum_i2c_bus_overview.pdf); [2] [Microchip: SPI overview](https://developerhelp.microchip.com/xwiki/bin/view/applications/SPI/); [3] [Espressif: ESP32 SPI](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/spi_master.html); [4] [Analog Devices: clock modes](https://www.analog.com/en/resources/design-notes/interfacing-spi-realtime-clocks-rtcs-with-a-microcontroller.html). [5] [Motorola: 1987 SPI application note](https://www.bitsavers.org/components/motorola/_appNotes/AN-0991_Using_the_Serial_Peripheral_Interface_to_Communicate_between_Multiple_Microcomputers.pdf). Verify settings and limits in the specific device datasheet.
