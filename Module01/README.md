@@ -4,6 +4,19 @@ Student: Haocheng Feng. Course: HSBI Sensorik und Aktorik, WS 2026/27.
 
 This page collects the actual hardware experiment records through Task 4. Reports, source programs, original circuit photographs, screenshots and saved readings are linked below. The instructor-requested scope ends after Task 4; Task 5 filtering has not been performed. Personal reflections remain separate from these experimental records.
 
+## Learning Goals
+
+Goal numbers follow the [Module 1 workbook](https://github.com/iotempire/iotempire-teaching/blob/129d3f0ab4d9acd43e1659769cf4777e4e2aa41e/full-classes/hsbi-sensors-actuators-10d/modules/01-foundations-measurement-and-sensor-chain.md#-learning-goals). Status describes the evidence available at Checkpoint 1.
+
+| Workbook goal | Experiment | Evidence | Status |
+| --- | --- | --- | --- |
+| **LG1 · Transduction.** Explain how a sensor converts a physical quantity and fits into a full signal chain. | Task 4 · LDR divider | The [circuit and acquisition notes](ldr-divider/README.md#circuit-and-operating-principle) trace light through resistance, divider voltage, ADC conversion and logged output. | Demonstrated with the LDR chain. |
+| **LG2 · Measurement vocabulary.** Use true value, error, uncertainty, accuracy, precision, resolution, range and sensitivity correctly. | Tasks 3–4 · Potentiometer ADC and LDR repeats | The [ADC comparison](potentiometer-adc/README.md#recovered-stationary-comparison-2026-10-25) distinguishes code spread and resolution from voltage accuracy. The [LDR repeatability notes](ldr-divider/README.md#repeatability-and-limitations) explain sources of variation. | Partial. Independent voltage checks and a systematic treatment of all the measurement terms remain open. |
+| **LG3 · Digital signal chain.** Explain conditioning, ADC conversion, sampling theorem, quantization and coding. | Tasks 2–4 · Serial plotting, potentiometer ADC and LDR divider | [Plot timing](serial-plotter/README.md#loop-timing), the [ADC code and step model](potentiometer-adc/README.md#nominal-voltage-model) and the [divider circuit](ldr-divider/README.md#circuit-and-operating-principle) document sampling, quantization and analog-to-digital conversion. | Partial. The sampling theorem and aliasing are not explicitly treated in the reports. |
+| **LG4 · Digital I/O.** Drive a resistor-limited LED or a relay module safely and read a pulled-up or pulled-down button with debounce. | Task 1 · LED and button debounce | [Wiring and software](button-debounce/README.md) and [raw/accepted counters](button-debounce/observed-serial.csv) show the LED, internal pull-up and software debounce. | Demonstrated for the LED and software debounce. The counters are cumulative and LED current was not independently measured. |
+| **LG5 · Serial tools.** Use Arduino IDE and the serial console to inspect, log and plot data. | Tasks 1–2 · Serial Monitor and Plotter | [Monitor excerpt](button-debounce/observed-serial.csv), [plotting report](serial-plotter/README.md) and [captured transitions](serial-plotter/button-traces.png). | Demonstrated. The captured plot does not resolve fast contact bounce. |
+| **LG6 · ADC and filtering.** Measure a real ADC, calculate the quantization step, read an LDR and try moving-average, median and cutoff filtering. | Tasks 3–4 · ADC resolution and LDR. Task 5 · Filtering | [ADC observations and ideal steps](potentiometer-adc/README.md) and [LDR readings](ldr-divider/measurements/readings.csv). | Partial. The step calculation assumes a 3.3 V span. Module 1 Task 5 was not performed. |
+
 ## Experiment records
 
 | Task | Report and evidence | Recorded work and limits |
@@ -41,6 +54,6 @@ The saved intermediate reading ADC_mV = 1089 gives an approximate LDR resistance
 
 A multimeter was unavailable: LED forward voltage/current, potentiometer voltage checks and independent LDR voltage verification have not been completed. The LDR's lux response, temperature coefficient and response time were not measured. The reports distinguish observations from illustrative calculations, software commands and untested circuit alternatives.
 
-[Reflection 1 — personal reflection pending](../Reflections/ref01.md) · [Portfolio home](../README.md)
+[Reflection 1 — draft for review](../Reflections/ref01.md) · [Portfolio home](../README.md)
 
 Course source: [Module 1 workbook](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-sensors-actuators-10d/modules/01-foundations-measurement-and-sensor-chain.md).
