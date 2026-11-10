@@ -10,6 +10,7 @@ Student: Haocheng Feng. Measurements recorded on 4 and 10 November 2026.
 | 2 | [DS18B20 characterization](ds18b20/README.md) | Single-probe readings, resolution and repeatability observations, and thermal response in water and air. |
 | 3a | [ADC-chain calibration](adc-calibration/README.md) | Two calibration points and fresh third-point validation. |
 | 3b | [LDR calibration](ldr-calibration/README.md) | Power-law and linear models checked against an existing point. Fresh validation remains pending. |
+| 4.1 | [LDR hysteresis and repeatability](ldr-hysteresis/README.md) | Two paired card sweeps. Controlled speed and timed settling comparisons remain pending. |
 | 5 | [Noise, filtering and hysteresis](noise-and-filtering/README.md) | Five subtask reports with raw traces, filter comparisons and decision results. |
 
 The [completion checklist](completion-checklist.md) covers the remaining measurements and peer review. [Portfolio home](../README.md) · [Course workbook](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-sensors-actuators-10d/modules/03-sensor-characterization-and-calibration.md)
