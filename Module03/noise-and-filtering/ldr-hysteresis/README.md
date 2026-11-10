@@ -6,7 +6,7 @@ Date: 2026-11-10. Status: Run 2 demonstrates reduced threshold chatter with hyst
 
 The existing Task 5.2 divider is retained: 3V3 → 10 kΩ → GPIO34 junction → LDR → GND, as reported by the operator. With this orientation, shading is expected to increase the ADC code. Physical wiring has not been independently reverified.
 
-The [experiment sketch](./task5-ldr-hysteresis/task5-ldr-hysteresis.ino) was compiled and uploaded through Arduino IDE. GPIO34, 12-bit resolution, 11 dB attenuation. Sending B discards 32 warm-up readings then takes 200 readings, separated by approximately 10 ms. These baseline samples are summarized by the firmware but are not exported individually.
+The [experiment sketch](firmware/task5-ldr-hysteresis/task5-ldr-hysteresis.ino) was compiled and uploaded through Arduino IDE. GPIO34, 12-bit resolution, 11 dB attenuation. Sending B discards 32 warm-up readings then takes 200 readings, separated by approximately 10 ms. These baseline samples are summarized by the firmware but are not exported individually.
 
 Observed Serial Monitor output at 22:58:03.719:
 
@@ -37,17 +37,17 @@ Verified exactly 2000 sequential sample indices, strictly increasing acquisition
 
 Neither decision ever became 1: single-threshold state changes = 0; hysteresis state changes = 0, including transitions from the initial state 0. The raw maximum (3411) is below the single threshold (3436) and upper hysteresis threshold (3466). A few samples may enter the band above the lower threshold, but cannot turn the initially off hysteresis decision on. Therefore this run does not demonstrate hysteresis suppression of threshold chatter or a full crossing of both decision thresholds. Task 5.5 remains incomplete. Thresholds are not retrospectively changed to present this as a successful preconfigured test.
 
-![Run 1 raw input, fixed thresholds and decisions](./Task5.5-LDR-Run1.png)
+![Run 1 raw input, fixed thresholds and decisions](evidence/run-1/Task5.5-LDR-Run1.png)
 
 Before repeating, check the sensor's response direction with intentional covered/uncovered states and verify the divider connections. Choose thresholds between those measured states with room for a slow crossing in both directions. Preserve this unsuccessful attempt separately. For a high-code alarm, turn on at the upper bound and off at the lower bound; for a low-code alarm, reverse those state rules. This is a decision-state hysteresis test, not a sensor calibration.
 
-- [Original serial log](./Task5.5-LDR-Run1-Serial-Log.txt)
-- [All raw samples and both decision outputs](./Task5.5-LDR-Run1-Samples.txt)
+- [Original serial log](evidence/run-1/Task5.5-LDR-Run1-Serial-Log.txt)
+- [All raw samples and both decision outputs](evidence/run-1/Task5.5-LDR-Run1-Samples.txt)
 
 
 ## Run 2 — corrected preselected thresholds and observed chatter reduction
 
-Date: 2026-11-10. A separate [Run 2 firmware](./task5-ldr-hysteresis-run2/task5-ldr-hysteresis-run2.ino) was compiled and uploaded. Based on the range observed in Run 1, thresholds were fixed before the new capture at lower=2200, midpoint=2300 and upper=2400 ADC codes. The comparison uses a low-code alarm: single threshold ON at raw ≤2300; hysteresis ON at raw ≤2200, OFF at raw ≥2400, retaining its prior state between those thresholds. Both start OFF. These thresholds are selected for a light demonstration and have no degree-Celsius interpretation.
+Date: 2026-11-10. A separate [Run 2 firmware](firmware/task5-ldr-hysteresis-run2/task5-ldr-hysteresis-run2.ino) was compiled and uploaded. Based on the range observed in Run 1, thresholds were fixed before the new capture at lower=2200, midpoint=2300 and upper=2400 ADC codes. The comparison uses a low-code alarm: single threshold ON at raw ≤2300; hysteresis ON at raw ≤2200, OFF at raw ≥2400, retaining its prior state between those thresholds. Both start OFF. These thresholds are selected for a light demonstration and have no degree-Celsius interpretation.
 
 The new 200-sample baseline summary was mean 3354.415, minimum 3313, maximum 3408; individual baseline samples were not exported. Serial START: 23:05:30.876; DONE: 23:06:14.634. The operator was prompted to hold uncovered, gradually shade, pause and gradually uncover; actual hand position was not independently recorded. The captured trace did not follow a complete return-to-baseline cycle.
 
@@ -67,7 +67,7 @@ The input begins near 3360 codes, changes downward after approximately 16 s, and
 
 Four additional single-threshold transitions (two brief OFF/ON pairs) are avoided by hysteresis in this trace. This is observed chatter reduction on the same measured input, not a guarantee of an 80% reduction for future conditions. At the first recorded trigger both thresholds were crossed within one sample interval, so both decisions turn ON at 16.760007 s; a separate hysteresis activation delay cannot be resolved from this event. No filter was applied to the signal before either decision.
 
-![Run 2 signal, threshold detail and decision comparison](./Task5.5-LDR-Run2.png)
+![Run 2 signal, threshold detail and decision comparison](evidence/run-2/Task5.5-LDR-Run2.png)
 
 ### Limits and frost-alarm recommendation
 
@@ -77,5 +77,5 @@ For a temperature frost alarm, I would use hysteresis in the decision, with an O
 
 Task 5.5 now has qualified evidence of hysteresis suppressing repeated switching during a measured threshold fluctuation, plus the alarm recommendation. Full return/reset evidence remains an explicitly identified limitation.
 
-- [Run 2 original serial log](./Task5.5-LDR-Run2-Serial-Log.txt)
-- [Run 2 complete raw and decision samples](./Task5.5-LDR-Run2-Samples.txt)
+- [Run 2 original serial log](evidence/run-2/Task5.5-LDR-Run2-Serial-Log.txt)
+- [Run 2 complete raw and decision samples](evidence/run-2/Task5.5-LDR-Run2-Samples.txt)

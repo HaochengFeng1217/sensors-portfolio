@@ -1,4 +1,4 @@
-# Task 5.4 — Potentiometer Step Run 1
+# Task 5.4 — Potentiometer step and filter lag
 
 Date: 2026-11-10
 
@@ -18,7 +18,7 @@ All 2000 sequential indices and increasing acquisition timestamps were verified.
 - Samples at the lower rail (0): 82; at the upper rail (4095): 18. These are retained in all saved data.
 - The transition includes repeated large reversals and both-rail excursions rather than one clean step. This may involve movement/contact or other electrical disturbances, but the trace alone does not establish their cause.
 
-![Complete measured record and transition detail](./Task5.4-Potentiometer-Step-Run1.png)
+![Complete measured record and transition detail](evidence/run-1/Task5.4-Potentiometer-Step-Run1.png)
 
 ## Interpretation
 
@@ -28,10 +28,10 @@ For the repeat, secure the breadboard connections and potentiometer terminals. K
 
 ## Evidence
 
-- [Original serial log](./Task5.4-Potentiometer-Step-Run1-Serial-Log.txt)
-- [All 2000 samples and firmware filter outputs](./Task5.4-Potentiometer-Step-Run1-Samples.txt)
-- [Acquisition sketch](./task5-step-acquisition/task5-step-acquisition.ino)
-- [Protocol](./Task5.4-Potentiometer-Step-Protocol.md)
+- [Original serial log](evidence/run-1/Task5.4-Potentiometer-Step-Run1-Serial-Log.txt)
+- [All 2000 samples and firmware filter outputs](evidence/run-1/Task5.4-Potentiometer-Step-Run1-Samples.txt)
+- [Acquisition sketch](firmware/task5-step-acquisition/task5-step-acquisition.ino)
+- [Protocol](protocol.md)
 
 
 ## Repeat — Run 2
@@ -44,12 +44,12 @@ Exactly 2000 sequential indices and increasing timestamps were verified; all thr
 
 The initial 0–5 s mean is 2272.844 codes. The final 15–20 s mean is 1432.468 codes. There are no samples at 0 and 58 samples at 4095. The trace changes downward near 6–7 s, upward near 8–9 s, downward again near 10–11 s, reaches the upper rail during 12–14 s, and then returns to a lower plateau. The cause cannot be established from the log; actual knob motion, contacts and input voltage were not independently observed.
 
-![Run 2 complete trace](./Task5.4-Potentiometer-Step-Run2.png)
+![Run 2 complete trace](evidence/run-2/Task5.4-Potentiometer-Step-Run2.png)
 
 This is not one clean intermediate-level step. A single crossing-delay result would be ambiguous and is not reported. Task 5.4 remains incomplete. Before another repeat, confirm whether the operator made more than one turn and check that holding or gently turning the shaft does not disturb the connections. Keep both levels away from the rails and use one small, quick movement followed by a fixed hold.
 
-- [Run 2 original exported log](./Task5.4-Potentiometer-Step-Run2-Serial-Log.txt)
-- [Run 2 complete samples and filter outputs](./Task5.4-Potentiometer-Step-Run2-Samples.txt)
+- [Run 2 original exported log](evidence/run-2/Task5.4-Potentiometer-Step-Run2-Serial-Log.txt)
+- [Run 2 complete samples and filter outputs](evidence/run-2/Task5.4-Potentiometer-Step-Run2-Samples.txt)
 
 
 ## Repeat — Run 3
@@ -60,10 +60,10 @@ All 2000 sequential samples were retained. Acquisition span: 19.990024 s. Sample
 
 There are 106 samples at 0 and 6 at 4095. Large excursions occur before approximately 5 s. The 5–10 s mean is 2664.960 codes; the 15–20 s mean is 2665.984 codes. No sustained change between distinct levels follows the device cue. The record does not establish the cause; wiring/contact problems and actual shaft motion need to be checked physically. A single-step filter latency cannot be determined from this run. Task 5.4 remains incomplete.
 
-![Run 3 full trace](./Task5.4-Potentiometer-Step-Run3.png)
+![Run 3 full trace](evidence/run-3/Task5.4-Potentiometer-Step-Run3.png)
 
-- [Original exported serial log](./Task5.4-Potentiometer-Step-Run3-Serial-Log.txt)
-- [All samples and filter outputs](./Task5.4-Potentiometer-Step-Run3-Samples.txt)
+- [Original exported serial log](evidence/run-3/Task5.4-Potentiometer-Step-Run3-Serial-Log.txt)
+- [All samples and filter outputs](evidence/run-3/Task5.4-Potentiometer-Step-Run3-Samples.txt)
 
 Before another timed capture, verify that a fixed knob position produces a steady intermediate reading and that turning the shaft produces a repeatable, persistent change. Check the wiper-to-GPIO34 connection, both outer terminals to 3V3/GND, and exposed contacts. Only start another step capture after this check passes.
 
@@ -87,9 +87,9 @@ The moving-average group delay is (5-1)/2 = 2 samples, approximately 20 ms, cons
 
 One raw sample (1177 at 11.760027 s) is 0; none is 4095. The zero occurs after all initial 50% crossings. It is retained and causes a later disturbance in MA5 and EMA; median5 rejects this isolated low outlier. Its physical cause is unknown. No ideal-step settling time is claimed. A cleaner repeat could improve the evidence, but this run supports a qualified comparison of filter lag.
 
-![Run 4 full trace and crossing detail](./Task5.4-Potentiometer-Step-Run4.png)
+![Run 4 full trace and crossing detail](evidence/run-4/Task5.4-Potentiometer-Step-Run4.png)
 
-- [Original serial export](./Task5.4-Potentiometer-Step-Run4-Serial-Log.txt)
-- [Complete samples and filters](./Task5.4-Potentiometer-Step-Run4-Samples.txt)
+- [Original serial export](evidence/run-4/Task5.4-Potentiometer-Step-Run4-Serial-Log.txt)
+- [Complete samples and filters](evidence/run-4/Task5.4-Potentiometer-Step-Run4-Samples.txt)
 
 Task 5.4 now has measured crossing-delay evidence, with the finite-speed input and single zero-code outlier explicitly documented. Runs 1–3 remain preserved as unsuccessful attempts.

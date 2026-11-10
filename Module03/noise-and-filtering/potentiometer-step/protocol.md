@@ -22,4 +22,4 @@ Check sequential sample indices, actual intervals, input clipping and stable pla
 
 The five-point moving average has an analytical group delay of two samples (about 20 ms at 100 Hz). This is a prediction, not a measured result. Report measured crossing delays separately. No latency result is claimed before capture and analysis.
 
-[Acquisition sketch](./task5-step-acquisition/task5-step-acquisition.ino)
+[Acquisition sketch](firmware/task5-step-acquisition/task5-step-acquisition.ino)

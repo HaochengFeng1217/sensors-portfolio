@@ -8,7 +8,7 @@ Status: Two-point calibration and fresh third-point validation completed. Peer c
 - Board: ESP32 Dev Module; Arduino IDE 2.3.10.
 - ADC input: GPIO34, 12-bit resolution, 11 dB attenuation.
 - Circuit requested and confirmed connected by the operator: potentiometer end terminals to 3V3 and GND; centre wiper to GPIO34 and the meter red probe; meter black probe to shared GND.
-- Sketch: [task3a-adc-calibration.ino](./task3a-adc-calibration/task3a-adc-calibration.ino), compiled, uploaded and verified through live serial output.
+- Sketch: [task3a-adc-calibration.ino](firmware/task3a-adc-calibration/task3a-adc-calibration.ino), compiled, uploaded and verified through live serial output.
 - Port: `/dev/cu.usbserial-0001`; serial output: 115200 baud, newline-terminated commands.
 - Each capture averages 64 raw ADC conversions and reports their sample standard deviation. The library voltage estimate averages a separate set of conversions at the same potentiometer position.
 - Initial raw-zero readings were a setup observation and were not used as calibration data.
@@ -55,9 +55,9 @@ After fitting A and B, the operator moved the potentiometer to a new position an
 
 The absolute residual is approximately 7.1 times smaller at this one validation point. This supports using the local two-point correction under the same conditions; it does not establish accuracy over the entire ADC range. The corrected residual is approximately +0.253% of the reference. Calibration-point residuals are approximately zero by construction and must not be treated as independent validation.
 
-![ADC calibration and validation errors](./Task3a-ADC-Calibration-and-Validation.png)
+![ADC calibration and validation errors](evidence/Task3a-ADC-Calibration-and-Validation.png)
 
-[Captured serial evidence](./Task3a-Captured-Serial-Evidence.txt) preserves the three accepted captures and fitted equation. It is an excerpt transcribed from observed serial output, not the complete continuous log or individual raw samples.
+[Captured serial evidence](evidence/Task3a-Captured-Serial-Evidence.txt) preserves the three accepted captures and fitted equation. It is an excerpt transcribed from observed serial output, not the complete continuous log or individual raw samples.
 
 ## Remaining checks
 

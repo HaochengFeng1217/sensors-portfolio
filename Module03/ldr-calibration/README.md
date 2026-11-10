@@ -65,7 +65,7 @@ The power-law absolute error is approximately 8.6 times smaller at this point, b
 
 These checks also favour the power law over a single straight line across this range. Model error depends on light level; the 10 cm power-law error remains substantial.
 
-![Two-point models, log–log view and validation errors](./Task3b-LDR-Models-and-Validation.png)
+![Two-point models, log–log view and validation errors](evidence/Task3b-LDR-Models-and-Validation.png)
 
 ## Interpretation and calibration decision
 
@@ -93,9 +93,10 @@ The 15 cm point is outside the current parameter fit, so it provides a held-out 
 
 ## Evidence
 
-- [Models and validation plot](./Task3b-LDR-Models-and-Validation.png)
-- [Calculation table](./Task3b-LDR-Calibration-and-Validation.csv)
-- [Task 1 lab record](./Task1-LDR-Lab-Record.md)
+- [Models and validation plot](evidence/Task3b-LDR-Models-and-Validation.png)
+- [Calculation table](evidence/Task3b-LDR-Calibration-and-Validation.csv)
+- [Calculation results (JSON)](evidence/Task3b-Calculation-Results.json)
+- [Task 1 lab record](../ldr-characterization/README.md)
 
 Analysis of the available data is complete. Numerical uncertainty and a fresh validation measurement can be added when equipment is available.
 

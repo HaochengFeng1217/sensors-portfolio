@@ -73,7 +73,7 @@ These provisional results depend on the inverse-square assumption. Ambient light
 
 Additional hardware measurements were postponed because the multimeter was temporarily unavailable.
 
-The subsequent [Task 3b record](./Task3b-LDR-Calibration-and-Validation.md) uses only the 5 and 30 cm points for calibration and the 15 cm point for validation. That analysis is separate from this all-six-point characterization fit.
+The subsequent [Task 3b record](../ldr-calibration/README.md) uses only the 5 and 30 cm points for calibration and the 15 cm point for validation. That analysis is separate from this all-six-point characterization fit.
 
 ## Additional 15 cm readings under changed ambient light
 
@@ -110,7 +110,7 @@ Resistance statistics using the new 3.330 V supply and confirmed voltages:
 
 Calculate each resistance before taking its mean. These statistics describe the observed spread, not absolute accuracy or a complete measurement uncertainty. Supply variation during the three readings was not separately recorded. The comparison with one ADC step remains pending.
 
-Data file: [Task1-LDR-15cm-Repeatability.csv](./Task1-LDR-15cm-Repeatability.csv).
+Data file: [Task1-LDR-15cm-Repeatability.csv](evidence/Task1-LDR-15cm-Repeatability.csv).
 
 Keep this dataset separate from the original 15 cm reading of 0.36 V and from the six-point calibration dataset. A changed physical light input and a different meter mean the difference from the earlier reading is not evidence of LDR drift, hysteresis or calibration error. This set is not an equivalent-condition validation of the Task 3b model.
 

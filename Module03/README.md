@@ -1,55 +1,18 @@
-# Sensor Characterization and Calibration — Lab Records
+# Module 3: Sensor Characterization and Calibration
 
-Measurements: 2026-11-04 and 2026-11-10. Compiled: 2026-11-10. All lab records, plot labels, filenames and data headings are in English.
+Student: Haocheng Feng. Measurements recorded on 4 and 10 November 2026.
 
-## Records
+## Experiment records
 
-- [Task 5.4 — Potentiometer transition and qualified delay estimates](./Task5.4-Potentiometer-Step-Lab-Record.md)
-- [Task 5.3 — Potentiometer filter rehearsal](./Task5.3-Potentiometer-Filter-Rehearsal.md)
-- [Module 3 completion checklist, reviewed 2026-11-10](./Module3-Completion-Checklist.md)
-- [Task 1 — LDR characterization](./Task1-LDR-Lab-Record.md)
-- [Task 2 — DS18B20 characterization and thermal response](./Task2-DS18B20-Lab-Record.md)
-- [Task 3a — ADC chain calibration and fresh validation](./Task3a-ADC-Calibration-Lab-Record.md)
-- [Task 3b — LDR two-point calibration and validation](./Task3b-LDR-Calibration-and-Validation.md)
-- [Task 5 — Noise and filtering, 5.1–5.5 evidence and limitations](./Task5-Noise-and-Filtering-Lab-Record.md)
+| Task | Report | Recorded work and limits |
+| --- | --- | --- |
+| 1 | [LDR characterization](ldr-characterization/README.md) | Six distances and a separate repeatability set. ADC comparison remains pending. |
+| 2 | [DS18B20 characterization](ds18b20/README.md) | Single-probe readings, resolution and repeatability observations, and thermal response in water and air. |
+| 3a | [ADC-chain calibration](adc-calibration/README.md) | Two calibration points and fresh third-point validation. |
+| 3b | [LDR calibration](ldr-calibration/README.md) | Power-law and linear models checked against an existing point. Fresh validation remains pending. |
+| 5 | [Noise, filtering and hysteresis](noise-and-filtering/README.md) | Five subtask reports with raw traces, filter comparisons and decision results. |
 
-## Plots
-
-- [Potentiometer Run 3: steadier chain baseline](./Task5.1-Potentiometer-Run3-Noise.png)
-- [Two potentiometer acquisitions compared](./Task5.1-Potentiometer-Runs-Comparison.png)
-- [Potentiometer raw-noise acquisition](./Task5.1-Potentiometer-Noise.png)
-- [ADC calibration and fresh validation](./Task3a-ADC-Calibration-and-Validation.png)
-- [Hot-to-cold response](./Task2.7-Hot-to-Cold-Response.png)
-- [Cold-to-hot response](./Task2.7-Cold-to-Hot-Response.png)
-- [Water and air comparison](./Task2.7-Water-and-Air-Comparison.png)
-- [LDR models and validation](./Task3b-LDR-Models-and-Validation.png)
-
-## Data and firmware
-
-- [LDR repeatability at 15 cm under changed ambient light](./Task1-LDR-15cm-Repeatability.csv)
-- [Temperature repeatability](./Task2.5-Temperature-Repeatability.csv)
-- [Hot-water observation excerpt](./Task2-Hot-Water-Observation.csv)
-- [Hot-to-cold data](./Task2.7-Hot-to-Cold-Data.csv)
-- [Cold-to-hot data](./Task2.7-Cold-to-Hot-Data.csv)
-- [Air-cooling data](./Task2.7-Air-Cooling-Data.csv)
-- [Raw serial log](./Task2-Thermal-Experiments-Serial-Log.txt)
-- [LDR calibration and validation calculations](./Task3b-LDR-Calibration-and-Validation.csv)
-- [LDR calculation results](./Task3b-Calculation-Results.json)
-- [DS18B20 acquisition sketch](./task2-ds18b20/task2-ds18b20.ino)
-
-Measured values and pending work are documented separately from assumptions, calculations and model estimates in each record.
-
-- [Task 5.4 Run 3: trace and validity assessment](./Task5.4-Potentiometer-Step-Lab-Record.md#repeat--run-3)
-- [Task 5.4 Run 3 full trace](./Task5.4-Potentiometer-Step-Run3.png)
-
-- [Task 5.4 Run 4 full trace and crossing detail](./Task5.4-Potentiometer-Step-Run4.png)
-
-- [Task 5.2 — LDR noise and qualified chain-baseline comparison](./Task5.2-LDR-Noise-Lab-Record.md)
-
-- [Task 5.3 — LDR filter and synthetic spike comparison](./Task5.3-LDR-Filter-Comparison.md)
-
-- [Task 5.5 — measured hysteresis chatter reduction and limits](./Task5.5-LDR-Hysteresis-Lab-Record.md)
-
+The [completion checklist](completion-checklist.md) covers the remaining measurements and peer review. [Portfolio home](../README.md) · [Course workbook](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-sensors-actuators-10d/modules/03-sensor-characterization-and-calibration.md)
 
 ## Study log
 
@@ -81,4 +44,4 @@ This portfolio records the measurements available from these sessions. The stude
 
 ### Remaining study-log work
 
-Two independently found characterization examples, a complete search log, peer-verified mini checks, the neighbouring-pod exchange and agreed-learning note remain unrecorded. The thermal-response and LDR-model plots are candidate artefacts for discussion, not substitutes for those required external examples or a documented peer exchange. See the [completion checklist](./Module3-Completion-Checklist.md).
+Two independently found characterization examples, a complete search log, peer-verified mini checks, the neighbouring-pod exchange and agreed-learning note remain unrecorded. The thermal-response and LDR-model plots are candidate artefacts for discussion, not substitutes for those required external examples or a documented peer exchange. See the [completion checklist](completion-checklist.md).

@@ -4,7 +4,7 @@ Date: 2026-11-10
 
 ## Scope and provenance
 
-This is an offline replay of the measured 500-sample potentiometer Run 3. No new hardware acquisition occurred. The course specifies an LDR log for Task 5.3; this rehearsal demonstrates the methods, but the formal LDR comparison was completed later and is recorded separately in [Task 5.3 LDR results](./Task5.3-LDR-Filter-Comparison.md). Original raw files are unchanged.
+This is an offline replay of the measured 500-sample potentiometer Run 3. No new hardware acquisition occurred. The course specifies an LDR log for Task 5.3; this rehearsal demonstrates the methods, but the formal LDR comparison was completed later and is recorded separately in [Task 5.3 LDR results](README.md). Original raw files are unchanged.
 
 ## Reproducible method
 
@@ -26,7 +26,7 @@ This is an offline replay of the measured 500-sample potentiometer Run 3. No new
 | Median (5) | 1341.669 | 3.761 | 65.8% | 2.000 |
 | EMA (alpha=0.2) | 1341.867 | 3.499 | 68.2% | 100.000 |
 
-![Measured trace and isolated synthetic spike response](./Task5.3-Potentiometer-Filter-Comparison.png)
+![Measured trace and isolated synthetic spike response](evidence/Task5.3-Potentiometer-Filter-Comparison.png)
 
 ## Findings and limits
 
@@ -38,9 +38,9 @@ For isolated impulsive disturbances, the median is a useful candidate. Moving av
 
 ## Evidence and remaining work
 
-- [Source: all 500 measured Run 3 inputs](./Task5.1-Potentiometer-Run3-Raw-Samples.txt)
-- [Original and synthetic filtered outputs](./Task5.3-Potentiometer-Filtered-Samples.txt)
-- [Filter comparison plot](./Task5.3-Potentiometer-Filter-Comparison.png)
+- [Source: all 500 measured Run 3 inputs](../potentiometer-noise/evidence/Task5.1-Potentiometer-Run3-Raw-Samples.txt)
+- [Original and synthetic filtered outputs](evidence/Task5.3-Potentiometer-Filtered-Samples.txt)
+- [Filter comparison plot](evidence/Task5.3-Potentiometer-Filter-Comparison.png)
 - [Course task](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-sensors-actuators-10d/modules/03-sensor-characterization-and-calibration.md)
 
 Task 5.3 remains partial until these methods are applied to the fixed-illumination LDR acquisition. Task 5.4 still needs a measured potentiometer step. Task 5.5 specifies an LDR or DS18B20 decision; a potentiometer demonstration alone would be a rehearsal.

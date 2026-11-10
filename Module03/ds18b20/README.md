@@ -22,7 +22,7 @@ The revised [course module](https://github.com/iotempire/iotempire-teaching/blob
 - Port: `/dev/cu.usbserial-0001`.
 - Data pin: GPIO4.
 - Libraries: OneWire 2.3.8 and DallasTemperature 4.0.6.
-- Sketch: [task2-ds18b20.ino](./task2-ds18b20/task2-ds18b20.ino), compiled and uploaded successfully. It was subsequently updated for the later experiments.
+- Sketch: [task2-ds18b20.ino](firmware/task2-ds18b20/task2-ds18b20.ino), compiled and uploaded successfully. It was subsequently updated for the later experiments.
 - Initial configuration: 12-bit resolution and 115200-baud serial output.
 - One distinct probe ROM ID was observed, with plausible continuous readings. This satisfies revised Task 2.2; multiple probes are optional Task 2.3.
 
@@ -67,7 +67,7 @@ No reference thermometer was available. Before acquisition, the operator was ask
 - Resolution: 12 bits, confirmed by configuration readback.
 - Sample interval: approximately 2.014 s; first-to-last interval: 18.126 s.
 - Each reading followed a new conversion request and a 760 ms wait. All ten reads succeeded.
-- Data: [Task2.5-Temperature-Repeatability.csv](./Task2.5-Temperature-Repeatability.csv).
+- Data: [Task2.5-Temperature-Repeatability.csv](evidence/Task2.5-Temperature-Repeatability.csv).
 
 | Sample | Time from acquisition start (ms) | Temperature (°C) |
 |---:|---:|---:|
@@ -99,7 +99,7 @@ The probe was already immersed when continuous logging began. A 12-bit logger co
 
 The initial observation was 68.4375 °C with a downward trend. The logger was then simplified and uploaded again. Re-uploading resets sample numbering and elapsed time, so the two runs must not be joined as one uninterrupted time series. An anomalous block timestamp in the earlier version was excluded from analysis.
 
-A ten-point excerpt from samples 21–30 of the simplified logger was saved as [Task2-Hot-Water-Observation.csv](./Task2-Hot-Water-Observation.csv). This is an excerpt, not the entire log.
+A ten-point excerpt from samples 21–30 of the simplified logger was saved as [Task2-Hot-Water-Observation.csv](evidence/Task2-Hot-Water-Observation.csv). This is an excerpt, not the entire log.
 
 - Sample 21: 64.1250 °C at 22688 ms after program start.
 - Sample 30: 63.8125 °C at 31814 ms.
@@ -114,9 +114,9 @@ A ten-point excerpt from samples 21–30 of the simplified logger was saved as [
 
 The probe was moved into cold water while continuous logging remained active. There was no upload or reset during transfer. Serial output was exported through Arduino IDE's Copy Output control.
 
-- [Raw serial log](./Task2-Thermal-Experiments-Serial-Log.txt), including earlier runs and startup characters; subsequently updated with later experiments.
-- [Hot-to-cold data](./Task2.7-Hot-to-Cold-Data.csv), 286 readings from the current program run at the time of export.
-- [Hot-to-cold plot](./Task2.7-Hot-to-Cold-Response.png).
+- [Raw serial log](evidence/Task2-Thermal-Experiments-Serial-Log.txt), including earlier runs and startup characters; subsequently updated with later experiments.
+- [Hot-to-cold data](evidence/Task2.7-Hot-to-Cold-Data.csv), 286 readings from the current program run at the time of export.
+- [Hot-to-cold plot](evidence/Task2.7-Hot-to-Cold-Response.png).
 
 This run began near 64.6875 °C. Sample 137 at 140.323 s was 60.7500 °C. Gradual cooling was followed by rapid cooling: sample 153 at 156.549 s was 53.6875 °C, sample 154 was 49.8750 °C and sample 155 was 44.8125 °C. Departure from the hot bath and entry into cold water were not synchronously timestamped, so none of these readings can be identified as an exact physical transfer instant.
 
@@ -130,8 +130,8 @@ The response is clearly observed, but the uncertain start, cooling initial bath 
 
 The probe was subsequently transferred back to hot water without interrupting the logger. A screenshot showed the local plateau after warming.
 
-- [Cold-to-hot data](./Task2.7-Cold-to-Hot-Data.csv): samples 430–579, 150 readings including the baseline and transfer.
-- [Cold-to-hot plot](./Task2.7-Cold-to-Hot-Response.png).
+- [Cold-to-hot data](evidence/Task2.7-Cold-to-Hot-Data.csv): samples 430–579, 150 readings including the baseline and transfer.
+- [Cold-to-hot plot](evidence/Task2.7-Cold-to-Hot-Response.png).
 
 ### Approximate 63% estimate
 
@@ -162,8 +162,8 @@ After removal from hot water, the operator was asked to keep the metal probe sus
 
 The logger continued without a reset:
 
-- [Air-cooling data](./Task2.7-Air-Cooling-Data.csv): samples 680–991, 312 readings including the pre-removal baseline.
-- [Water and air comparison](./Task2.7-Water-and-Air-Comparison.png).
+- [Air-cooling data](evidence/Task2.7-Air-Cooling-Data.csv): samples 680–991, 312 readings including the pre-removal baseline.
+- [Water and air comparison](evidence/Task2.7-Water-and-Air-Comparison.png).
 - The raw serial log was updated and a screenshot showed the ongoing cooling.
 
 Sample 700, at 711.261 s and 49.3750 °C, was selected as the approximate removal start. Subsequent readings were 49.1250, 48.8750 and 48.6250 °C. The last saved point was sample 991 at 1006.365 s and 24.2500 °C, approximately 295.104 s after the selected start. Final room-temperature equilibrium had not been reached.

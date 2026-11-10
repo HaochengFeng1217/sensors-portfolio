@@ -6,7 +6,7 @@ Date: 2026-11-10.
 
 The operator reported completing the illustrated divider: ESP32 3V3 → 10 kΩ fixed resistor → junction shared with GPIO34 → LDR → GND. Wiring and resistor value were not independently verified from a new photograph or meter reading. The operator was instructed to keep illumination, light source, sensor position and hand position fixed. No illuminance reference, lamp distance, or simultaneous voltage reading was recorded. The 3.30 V used in the preceding illustration was an ideal model, not a measured supply for this run.
 
-The dedicated [LDR sketch](./task5-ldr-noise-acquisition/task5-ldr-noise-acquisition.ino) was compiled and uploaded with Arduino IDE. ESP32 GPIO34, 12-bit resolution and 11 dB attenuation match the potentiometer acquisition settings. Sending S starts 32 discarded warm-up conversions followed by 500 single raw conversions at a target 100 Hz. Raw data and microsecond acquisition timestamps are buffered before serial output; no filtering, detrending, rejection or correction is applied. Serial START: 22:51:49.978; DONE: 22:51:56.012. Desktop times include printing and are not sampling timestamps.
+The dedicated [LDR sketch](firmware/task5-ldr-noise-acquisition/task5-ldr-noise-acquisition.ino) was compiled and uploaded with Arduino IDE. ESP32 GPIO34, 12-bit resolution and 11 dB attenuation match the potentiometer acquisition settings. Sending S starts 32 discarded warm-up conversions followed by 500 single raw conversions at a target 100 Hz. Raw data and microsecond acquisition timestamps are buffered before serial output; no filtering, detrending, rejection or correction is applied. Serial START: 22:51:49.978; DONE: 22:51:56.012. Desktop times include printing and are not sampling timestamps.
 
 The full serial output was copied via a scratch Arduino editor, saved without compiling or uploading that export, then preserved in a text log. All 500 sequential sample indices and increasing timestamps were verified. Offline mean and sample standard deviation agree with the firmware summary within 0.000001 code.
 
@@ -25,7 +25,7 @@ The full serial output was copied via a scratch Arduino editor, saved without co
 
 Successive non-overlapping 100-sample block means: 3362.820, 3362.790, 3361.570, 3360.730, 3360.150 codes. These block statistics help expose slow changes but do not prove constant illumination.
 
-![LDR raw samples](./Task5.2-LDR-Run1-Noise.png)
+![LDR raw samples](evidence/Task5.2-LDR-Run1-Noise.png)
 
 ## Comparison with the provisional chain baseline
 
@@ -38,5 +38,5 @@ The LDR-chain standard deviation is 0.746 times the potentiometer baseline and i
 
 Task 5.2 acquisition, statistics and qualified baseline comparison are recorded. This LDR log can be reused for Task 5.3; that filter comparison is not yet claimed complete here.
 
-- [Original exported serial log](./Task5.2-LDR-Run1-Serial-Log.txt)
-- [All 500 raw samples and timestamps](./Task5.2-LDR-Run1-Raw-Samples.txt)
+- [Original exported serial log](evidence/Task5.2-LDR-Run1-Serial-Log.txt)
+- [All 500 raw samples and timestamps](evidence/Task5.2-LDR-Run1-Raw-Samples.txt)

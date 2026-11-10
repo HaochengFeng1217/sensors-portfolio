@@ -1,6 +1,6 @@
 # Task 5.3 — LDR filter and single-spike comparison
 
-Date: 2026-11-10. Offline analysis of the unchanged 500-sample [Task 5.2 LDR log](./Task5.2-LDR-Run1-Raw-Samples.txt). No additional physical acquisition was performed. All original measured data remain unchanged.
+Date: 2026-11-10. Offline analysis of the unchanged 500-sample [Task 5.2 LDR log](../ldr-noise/evidence/Task5.2-LDR-Run1-Raw-Samples.txt). No additional physical acquisition was performed. All original measured data remain unchanged.
 
 ## Reproducible method
 
@@ -28,12 +28,14 @@ Create a separate copy of the raw log and add exactly +500 codes to sample 251 a
 - EMA: an initial +100-code change at sample 251, then 100 × 0.8^k codes after k subsequent samples. It spreads the effect into a decaying tail.
 - Median5: maximum absolute output change of 2 codes for this replay. The exact result depends on the surrounding measured sample values; robustness does not imply a universal zero response.
 
-![LDR filter comparison and synthetic spike response](./Task5.3-LDR-Filter-Comparison.png)
+![LDR filter comparison and synthetic spike response](evidence/Task5.3-LDR-Filter-Comparison.png)
 
 ## Lag trade-off and decision
 
-Smoothing reduces sample-to-sample variation but delays the response to real changes; median filtering additionally rejects isolated spikes while potentially suppressing very brief real events. MA5 has a theoretical group delay of two samples (approximately 20 ms at 100 Hz). This fixed-light dataset does not measure step latency. The separate [potentiometer Run 4](./Task5.4-Potentiometer-Step-Lab-Record.md#repeat--run-4-qualified-delay-measurement) provides qualified 50%-crossing delays of 20 ms (MA5), 20 ms (median5) and 40 ms (EMA) for its finite-speed manual transition; those values are not universal filter delays.
+Smoothing reduces sample-to-sample variation but delays the response to real changes; median filtering additionally rejects isolated spikes while potentially suppressing very brief real events. MA5 has a theoretical group delay of two samples (approximately 20 ms at 100 Hz). This fixed-light dataset does not measure step latency. The separate [potentiometer Run 4](../potentiometer-step/README.md#repeat--run-4-qualified-delay-measurement) provides qualified 50%-crossing delays of 20 ms (MA5), 20 ms (median5) and 40 ms (EMA) for its finite-speed manual transition; those values are not universal filter delays.
 
 For a frost alarm, combine a noise-appropriate filter with hysteresis in the threshold decision; a low SD alone is insufficient to select a safe alarm response. Task 5.5 still requires a recorded slow sensor drift through the decision thresholds.
 
-Task 5.3 is complete as an LDR-log replay comparison, with synthetic data clearly separated from the original measurements. [All original-input, filtered and synthetic-replay columns](./Task5.3-LDR-Filtered-Samples.txt) are retained for inspection.
+Task 5.3 is complete as an LDR-log replay comparison, with synthetic data clearly separated from the original measurements. [All original-input, filtered and synthetic-replay columns](evidence/Task5.3-LDR-Filtered-Samples.txt) are retained for inspection.
+
+[Earlier potentiometer rehearsal](potentiometer-rehearsal.md)
