@@ -15,3 +15,13 @@ The instructor directed the class to begin Task 2 before the divider output was 
 All pods should be ready to explain I2C open-drain signaling and pull-ups: devices pull a shared line low or release it, while a pull-up supplies its high state. The pull-up voltage and current must be compatible with the connected devices. This is a study note, not a claim that an I2C circuit or a pod discussion has been completed.
 
 Later Module 2 tasks have not been started in this record.
+
+
+## Teammate’s Module 2 work
+
+My teammate Zhenning Yu carried out and documented the experiments linked below. These are my takeaways from his work.
+
+- [Task 5 — I2C bus scan](https://github.com/LudwigMo/sensorik-aktorik-portfolio/blob/main/Module02/README.md#task-5-i2c-bus-scan). A scan finds devices that acknowledge an address. The LCD1602 responded at `0x27`.
+- [Task 6 — Direct register and library reads](https://github.com/LudwigMo/sensorik-aktorik-portfolio/blob/main/Module02/README.md#task-6-library-and-register-reading). Decoding the SE95 temperature register gave the same reading as the library (`26.938 °C`).
+- [Task 7 — Two devices on one I2C bus](https://github.com/LudwigMo/sensorik-aktorik-portfolio/blob/main/Module02/README.md#task-7-two-devices-on-one-bus). The LCD1602 (`0x27`) and SE95 (`0x4F`) shared SDA and SCL and could be addressed separately.
+- [Task 9 — ESP32 logic analyzer with PulseView](https://github.com/LudwigMo/sensorik-aktorik-portfolio/blob/main/Module02/README.md#task-9-build-and-test-an-esp32-logic-analyzer). PulseView decoded the captured SDA and SCL signals. The write to `0x29` returned a NACK because no device was present at that address.
