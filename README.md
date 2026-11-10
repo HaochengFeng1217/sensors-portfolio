@@ -13,11 +13,14 @@ Module 0 contains the documented Wokwi potentiometer/LED experiment, questions 1
 
 Module 1 now contains the hardware experiment records through Task 4: LED and button debounce, serial plotting, 12/10-bit potentiometer ADC comparison and the LDR divider. Reports include programs, photographs, screenshots, readings and measurement limitations. Task 5 has not been performed. Module 2 is in progress: Task 1 UART evidence and the assigned SPI research profile are recorded, while the divider output measurement and SPI presentation remain pending. Personal reflection files remain template placeholders.
 
+Module 3 now includes English lab records for LDR characterization, DS18B20 thermal response, ADC calibration, and Task 5.1–5.5 noise/filtering evidence. Raw logs, unsuccessful attempts, plots and firmware are retained. The module checklist identifies remaining experiments and limitations, including the unmeasured hysteresis return/reset cycle.
+
 ## Contents
 
 - [Module 0: Pre-study](pre-study/README.md)
 - [Module 1: experiment records — Tasks 1–4](Module01/README.md)
 - [Module 2: UART, divider and SPI research in progress](Module02/README.md)
+- [Module 3: sensor characterization and calibration](Module03/README.md)
 - [New module template](ModuleNN.md)
 - [Working-day reflections](Reflections/README.md)
 - [Hardware inventory](Hardware/README.md)
@@ -36,3 +39,4 @@ The live workbook can change; local scheduling and announcements come from the c
 Write notes in English, German, or a mixture. Record code, diagrams, evidence, sources,
 and reflections as the work is performed. Link peer contributions with an explanation.
 Keep Markdown and images in the portfolio; link external documents and videos.
+

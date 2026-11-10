@@ -1,0 +1,24 @@
+Task 3a, 2026-11-10
+Accepted capture excerpts transcribed from observed Arduino IDE serial output.
+These excerpts are not the complete continuous log or individual raw samples.
+The meter references were reported by the operator.
+
+Command: A 0.482
+CAPTURE,ms=584416,raw_mean=433.516,raw_SD=4.408,factory_V=0.49619,N=64
+POINT=A,reference_V=0.48200
+Waiting for the other calibration point.
+
+Command: B 2.009
+CAPTURE,ms=701465,raw_mean=2328.000,raw_SD=10.432,factory_V=2.03559,N=64
+POINT=B,reference_V=2.00900
+FIT: V = 0.000806024 * raw + 0.132576
+
+Command: V 1.207
+CAPTURE,ms=817959,raw_mean=1336.781,raw_SD=9.867,factory_V=1.22872,N=64
+POINT=V,reference_V=1.20700
+FIT: V = 0.000806024 * raw + 0.132576
+VALIDATION corrected_V=1.21005,before_error_V=0.02172,after_error_V=0.00305
+Before = factory-calibrated ADC voltage; after = this two-point fit.
+
+Note: factory_V is the sketch label for the Arduino-ESP32 analogReadMilliVolts
+library estimate. It is not the independent reference. The meter is the reference.

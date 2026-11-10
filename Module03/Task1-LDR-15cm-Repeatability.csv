@@ -1,0 +1,4 @@
+reading,distance_cm,supply_V,V_LDR_V,R_fixed_nominal_ohm,R_LDR_calculated_ohm,transcription_status,conditions
+1,15,3.330,0.709,10000,2705.074399084319,operator_confirmed,changed_ambient_light_separate_run
+2,15,3.330,0.704,10000,2680.883472962681,operator_confirmed,changed_ambient_light_separate_run
+3,15,3.330,0.698,10000,2651.975683890577,operator_confirmed,changed_ambient_light_separate_run

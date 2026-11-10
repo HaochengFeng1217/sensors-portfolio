@@ -1,0 +1,39 @@
+{
+  "A_kohm": 0.40372670807453415,
+  "gamma": 0.5629201253074249,
+  "linear_slope_kohm": -2.7064725399549094,
+  "linear_intercept_kohm": 3.110199248029444,
+  "validation_measured_kohm": 1.2040133779264213,
+  "power_prediction_kohm": 1.3907523216373312,
+  "power_error_kohm": 0.18673894371090993,
+  "power_error_percent": 15.509706713767244,
+  "linear_prediction_kohm": 2.809480076923343,
+  "linear_error_kohm": 1.6054666989969217,
+  "linear_error_percent": 133.34292861113323,
+  "additional_checks": [
+    {
+      "d_cm": 10.0,
+      "R_kohm": 0.6349206349206349,
+      "power_error_percent": 38.76493113928121,
+      "linear_error_percent": 283.28902530391287
+    },
+    {
+      "d_cm": 15.0,
+      "R_kohm": 1.2040133779264213,
+      "power_error_percent": 15.509706713767244,
+      "linear_error_percent": 133.34292861113323
+    },
+    {
+      "d_cm": 20.0,
+      "R_kohm": 1.795774647887324,
+      "power_error_percent": 7.067833794638599,
+      "linear_error_percent": 63.77582330512988
+    },
+    {
+      "d_cm": 25.0,
+      "R_kohm": 2.271062271062271,
+      "power_error_percent": 8.839616537099339,
+      "linear_error_percent": 32.18221202834365
+    }
+  ]
+}
