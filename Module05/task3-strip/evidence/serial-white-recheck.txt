@@ -1,0 +1,8 @@
+0 255 255 255 -> APPLIED index=0 R=255 G=255 B=255 luminance=80
+1 255 255 255 -> APPLIED index=1 R=255 G=255 B=255 luminance=80
+2 255 255 255 -> APPLIED index=2 R=255 G=255 B=255 luminance=80
+3 255 255 255 -> APPLIED index=3 R=255 G=255 B=255 luminance=80
+4 255 255 255 -> APPLIED index=4 R=255 G=255 B=255 luminance=80
+5 255 255 255 -> APPLIED index=5 R=255 G=255 B=255 luminance=80
+6 255 255 255 -> APPLIED index=6 R=255 G=255 B=255 luminance=80
+7 255 255 255 -> APPLIED index=7 R=255 G=255 B=255 luminance=80

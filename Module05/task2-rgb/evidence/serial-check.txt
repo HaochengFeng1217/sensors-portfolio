@@ -1,0 +1,23 @@
+Task 2 serial verification, 2026-11-18. Physical colours await operator confirmation.
+Initial serial input buffer cleared after opening the port.
+COMMAND 0 0 0
+APPLIED R=0 G=0 B=0
+COMMAND hello
+ERROR: enter exactly three decimal integers: R G B
+COMMAND 255 0
+ERROR: enter exactly three decimal integers: R G B
+COMMAND 255 0 0 7
+ERROR: enter exactly three decimal integers: R G B
+COMMAND 1.5 0 0
+ERROR: enter exactly three decimal integers: R G B
+COMMAND 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+ERROR: command too long; use R G B
+COMMAND 300 -10 128
+APPLIED R=255 G=0 B=128
+COMMAND 0 255 0
+APPLIED R=0 G=255 B=0
+COMMAND 0 0 255
+APPLIED R=0 G=0 B=255
+COMMAND 255 0 0
+APPLIED R=255 G=0 B=0
+All ten serial checks passed. Final command requests red only (255 0 0).

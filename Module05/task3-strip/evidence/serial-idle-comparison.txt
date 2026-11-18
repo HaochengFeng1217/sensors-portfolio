@@ -1,0 +1,3 @@
+Operator-reported eight-pixel white current at luminance 80: 0.09 A.
+Command: clear
+CLEARED

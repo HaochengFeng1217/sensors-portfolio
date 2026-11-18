@@ -1,0 +1,2 @@
+command='clear'; response='CLEARED'
+command='7 0 0 255'; response='APPLIED index=7 R=0 G=0 B=255 luminance=80'

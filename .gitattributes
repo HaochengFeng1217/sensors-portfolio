@@ -1,0 +1,3 @@
+# Preserve captured serial line endings while accepting CRLF in whitespace checks.
+Module05/**/evidence/*.txt whitespace=cr-at-eol
+*.csv whitespace=cr-at-eol

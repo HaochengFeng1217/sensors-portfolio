@@ -1,8 +1,19 @@
-# Module 4 — Liquid Measurement and Sensor Selection
+# Module 4: Liquid Measurement and Sensor Selection
+
+[Portfolio](../README.md) · [Evidence](#experiment-records) · [Reflection 4](../Reflections/ref04.md) · [Review](../PORTFOLIO-REVIEW.md)
 
 Portfolio owner Haocheng Feng. Evidence reviewed on 18 November 2026.
 
-The detailed Module 4 report, Arduino programs and experimental photographs are maintained in Zhenning Yu's portfolio. This page links his documented work and summarises its results. His contribution statement accompanies the source report. [Module record][yu-module] · [Contribution note][yu-contribution]
+Zhenning Yu performed and documented all experiments in this module. Haocheng was absent from the session; this page and its reflection record a retrospective study of Zhenning's evidence. [Source report][yu-module] · [Contribution statement][yu-contribution]
+
+## At a glance
+
+| Item | Recorded scope |
+| --- | --- |
+| Sensing principles | Ultrasonic distance/volume, conductive water detection and IMU motion classification. |
+| Volume validation | 213.83 mL predicted against about 219 mL reference: 2.36% deviation at one point. |
+| Contribution | Teammate experiments; retrospective study by Haocheng. |
+| Main limit | Lab results do not validate the proposed marine or brewery installations. |
 
 ## Learning goals
 
@@ -32,13 +43,13 @@ The volume-validation arithmetic was checked against the report's calibration ta
 
 The experiments connect sensor choice with the physical quantity being measured. The ultrasonic sensor measures surface distance, the conductive probe provides a water-contact decision, and the IMU identifies motion conditions that can affect liquid-level readings. The report identifies foam, sensor alignment, conductivity, contamination and motion thresholds as limitations. [Theory and limitations][yu-theory]
 
-The laboratory record supports the proposed sensing principles. The brewery radar arrangement and the marine installation recommendations remain designs awaiting field validation. Haocheng's individual hands-on roles and personal reflection can be added when confirmed. [Contribution note][yu-contribution] · [Industrial transfer][yu-brewery]
+The laboratory record supports the proposed sensing principles. The brewery radar arrangement and the marine installation recommendations remain designs awaiting field validation. Haocheng was absent and does not claim individual hands-on work. The [retrospective Reflection 4](../Reflections/ref04.md) discusses learning from Zhenning's report. [Contribution note][yu-contribution] · [Industrial transfer][yu-brewery]
 
 ## Source record
 
 Links below pin the reviewed evidence to Zhenning Yu's repository revision `a91cfa6491b854ff9ea7858242c6c1142b48ca65`. The current report can also be opened from his Module04 directory. [Current Module04](https://github.com/LudwigMo/sensorik-aktorik-portfolio/tree/main/Module04)
 
-[Portfolio home](../README.md)
+[Reflection 4 — retrospective study](../Reflections/ref04.md) · [Portfolio home](../README.md)
 
 [yu-module]: https://github.com/LudwigMo/sensorik-aktorik-portfolio/blob/a91cfa6491b854ff9ea7858242c6c1142b48ca65/Module04/README.md
 [yu-contribution]: https://github.com/LudwigMo/sensorik-aktorik-portfolio/blob/a91cfa6491b854ff9ea7858242c6c1142b48ca65/Module04/README.md#contribution-note

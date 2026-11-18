@@ -1,13 +1,13 @@
 # Module 3 — Completion Checklist
 
-Reviewed: 2026-11-10. This audit compares the saved evidence and this session's measurements with the current [course module](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-sensors-actuators-10d/modules/03-sensor-characterization-and-calibration.md). Unrecorded work performed elsewhere is not assessed. Prepared for repository submission under Module03. Discord posting has not been verified.
+Reviewed: 2026-11-18. Measurement dates remain 4 and 10 November 2026; the later review added analysis and datasheet notes without new acquisitions. This audit compares the saved evidence and this session's measurements with the current [course module](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-sensors-actuators-10d/modules/03-sensor-characterization-and-calibration.md). Unrecorded work performed elsewhere is not assessed. Prepared for repository submission under Module03. Discord posting has not been verified.
 
 ## Task status
 
 | Task | Status | Existing evidence | Remaining work |
 |---|---|---|---|
-| 1: LDR characterization | Partial | Six distances, measured voltages, calculated resistance, six-point power-law coefficients; separate three-reading repeatability set | ADC measurements and meter comparison; one-ADC-step resistance comparison; all-six-point fit/residual plots and same-data linear comparison; conditions and class comparison where applicable |
-| 2.1: Datasheet notes | Partial | Resolution, conversion times, accuracy and pull-up discussed | Complete active/standby-current notes and consolidate the required parameters |
+| 1: LDR characterization | Partial | Six distances, measured voltages, derived resistance, reproducible all-six-point power/linear comparison with fits and residual plots; separate three-reading repeatability set | ADC measurements and meter comparison; one-ADC-step resistance comparison; conditions and class comparison where applicable |
+| 2.1: Datasheet notes | Documentation complete on 18 November | Consolidated supply, range, resolution, conversion maxima, accuracy, active/standby currents and pull-up notes | Specifications are sourced; no supply-current test is claimed |
 | 2.2: Single DS18B20 | Complete | Successful upload, ROM ID and plausible continuous readings | None for this subtask |
 | 2.3: Multiple probes | Optional, not performed | One probe only | May be skipped |
 | 2.4: Resolution sweep | Partial under revised requirements | Four settings read back; five readings per setting; datasheet timing table | At least 20 readings per setting while slowly changing temperature; check setResolution return value; demonstrate distinct increments and document conversion time |
@@ -21,7 +21,7 @@ Reviewed: 2026-11-10. This audit compares the saved evidence and this session's 
 | 4: Hysteresis and repeatability | Partial | [Two paired LDR card sweeps](ldr-hysteresis/README.md), with maximum differences of 84.73 and 147.40 ADC codes. Existing 12-bit DS18B20 readings are supporting evidence. | Controlled LDR speed comparison, timed settling and resistance conversion with verified divider details. Ten potentiometer returns and DS18B20 measurements at 9 and 12 bits across the specified probes. |
 | 5: Noise and filtering | 5.1–5.5 evidence recorded on 2026-11-10, with stated limitations | Three separate 500-sample potentiometer runs; Run 3 has SD 11.281 codes and steadier block means; earlier runs retained; potentiometer filter/spike rehearsal saved; three disturbed step captures retained; Run 4 provides qualified filter crossing-delay evidence (20/20/40 ms) | Run 3 is a provisional chain baseline with unverified meter stability; 5.5 demonstrates 5 versus 1 switches; complete hysteresis return/reset remains unmeasured |
 | 6: Uncertainty and declarative filtering | Extension, not performed | Qualitative limitations only | Full numerical uncertainty budget and filter comparison if attempted; a final uncertainty statement is also suggested portfolio evidence |
-| A: Study log | Partial | English notes, references, findings and calibration reasoning across records | A consolidated study log is included in Module03/README.md; complete search notes, verified LLM Q&A, two found examples and mini-check answers; identify contributors |
+| A: Study log | Partial | English notes, references, findings and calibration reasoning across records | A consolidated study log is included in Module03/README.md; later sourced examples and a review trail are now linked; peer-verified LLM Q&A/mini-checks and contributor discussion remain to be recorded |
 | B: Peer exchanges | Not documented | None | Calibration peer check, mutual findings, 3–5 agreed takeaways, shared artefact, Discord post and individual agreed-learning note |
 
 ## Important distinctions
@@ -35,8 +35,8 @@ Reviewed: 2026-11-10. This audit compares the saved evidence and this session's 
 
 ## Suggested order before the checkpoint
 
-1. Organise and verify portfolio placement and submission; prepare water/air response and LDR model comparison as the two discussion examples.
-2. Finish documentation-only gaps, including Task 1 plots and the unified study log.
+1. Organise and verify portfolio placement and submission; prepare water/air response and LDR model comparison as local artifacts for discussion. These do not replace the two external characterization examples.
+2. Finish documentation-only gaps, including the remaining peer-verified study-log questions. Two external characterization examples are now documented as later study. Task 1 plots and a consolidated study log are now present.
 3. Retain the completed ADC-chain calibration and both 500-point datasets; strengthen matched-condition noise comparison and the hysteresis return/reset evidence.
 4. Repeat the revised resolution sweep and obtain a fresh controlled LDR validation point.
 5. Arrange reference-dependent measurements and peer exchange with the instructor or neighbouring pod.

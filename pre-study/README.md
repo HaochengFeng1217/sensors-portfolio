@@ -1,10 +1,12 @@
 # Module 0: Pre-study
 
+[Portfolio](../README.md) · [Simulation](#2-wokwi-observations-adc-resolution) · [Datasheets](datasheets.md) · [Review](../PORTFOLIO-REVIEW.md)
+
 Course: HSBI Sensorik und Aktorik, WS 2026/27  
 GitHub account: HaochengFeng1217  
 Full name: Haocheng Feng  
 Entry started: 2026-10-20  
-Status: **In progress - Questions 1-8 documented; personal review and preparation checks pending.**
+Status: **In progress - Questions 1-8 documented; personal review and instructor-access confirmation pending.**
 
 ## Preparation log
 
@@ -19,23 +21,23 @@ Status: **In progress - Questions 1-8 documented; personal review and preparatio
 - Added an actuator choice for a small lever-operated latch, with assumptions and a torque-sizing example.
 - Added the full-white LED current/power calculation and a supply-sizing example.
 - Selected a touch-confirmed proximity storage box and added a project abstract.
-- Personal review, supplementary study notes, and the remaining preparation checks are still pending.
+- Supplementary notes and later environment-readiness evidence are now linked; personal review and instructor-access confirmation remain pending.
 
 ## Completion checklist
 
 - [x] Personal public GitHub repository created with "Use this template".
 - [x] Initial pre-study entry structure prepared.
 - [x] Full name added to the portfolio homepage.
-- [ ] Guiding Questions 1-8 answered and understood.
+- [ ] Guiding Questions 1–8 personally reviewed and understood; written answers are already documented.
 - [x] VL53L0X and MPR121 datasheet notes completed, with sources and conditions.
 - [x] Wokwi ESP32 potentiometer-to-LED simulation run.
 - [x] ADC resolution changed and actual observations recorded.
 - [x] Coarse threshold/step behaviour tested and described.
 - [x] Real circuit and serial-output screenshots, or a saved simulation link, added.
 - [x] 5-10 line project abstract added, identifying two sensors and one actuator.
-- [ ] Remaining pre-study answers completed and final links checked.
+- [x] Questions 1–8 and supplementary written notes documented; local links checked in the 18 November review. Personal understanding remains to be confirmed.
 - [ ] Instructor access arranged through the course's confirmed process.
-- [ ] Arduino IDE v2 or PlatformIO readiness checked on the Mac.
+- [x] Arduino IDE and PlatformIO readiness established by later Module 3/5 builds and uploads; see [Module 5 workflow](../Module05/README.md). This is a later completion, not evidence of readiness before Day 1.
 
 ## 1. Sensor-to-system chain
 
@@ -283,25 +285,27 @@ The main uncertainty is achieving repeatable latch movement while avoiding unint
 
 ## Additional study notes
 
+Added during the 18 November 2026 review, not claimed as completed before the first session.
+
 ### Measurement and uncertainty
 
-- True value, error, and uncertainty: TODO
-- Resolution versus accuracy: TODO
-- Systematic versus random error; calibration versus averaging: TODO
-- Sampling, Nyquist condition, and quantization: TODO
+- [True/reference value, error and uncertainty](../Module01/measurement-and-sampling-notes.md#measurement-vocabulary).
+- [Resolution versus accuracy](../Module01/measurement-and-sampling-notes.md#measurement-vocabulary).
+- [Systematic versus random variation, calibration and averaging](../Module01/measurement-and-sampling-notes.md).
+- [Sampling, Nyquist condition and quantization](../Module01/measurement-and-sampling-notes.md#sampling-and-aliasing).
 
 ### Actuators
 
-- PWM duty cycle, LED dimming, and servo control: TODO
-- Plain LED current limiting: TODO
-- WS2812 versus plain RGB LEDs and power requirements: TODO
-- Servo, DC motor, and stepper comparison: TODO
-- Driver electronics for motors and relays: TODO
+- [PWM duty cycle, LED brightness and servo command distinction](../Module02/pins-and-dividers.md#pwm-is-not-a-bus); [frequency and gamma](../Module05/study-notes.md#duty-cycle-frequency-and-gamma).
+- [Plain LED resistor design](../Module05/study-notes.md#current-limiting-and-forward-voltage).
+- [Addressable pixels versus separately driven RGB channels](../Module05/study-notes.md#additive-colour-and-addressable-data) and [power requirements](../Module05/task3-strip/power-budget.md).
+- Servo versus motor/stepper: a positional servo combines actuation with internal position control; a DC motor's speed/direction needs a suitable driver and feedback for controlled position; a stepper moves in commanded increments, but missed steps/load can invalidate assumed position. These are study comparisons, not three tested actuators.
+- Motor/relay drivers: a bare coil or motor must not be powered by a GPIO. Use a correctly rated driver and power path, common signal reference where appropriate, and suitable inductive-transient protection. A motor's stall current, a relay's coil voltage and a module's logic interface must be checked for the actual part. The proposed servo latch in Question 6 remains a concept, not a completed circuit.
 
 ## Reflection and open questions
 
 - Completed: portfolio structure, written answers for Questions 1-8, the Wokwi ADC/LED experiment with saved evidence, and both sensor datasheet notes.
-- Remaining: personal review and understanding, supplementary study notes, instructor access, and Mac development-environment readiness.
+- Remaining: personal review and understanding, instructor-access confirmation and practical project implementation. Supplementary notes and later Mac development-environment evidence were added on 18 November 2026.
 - Open question: how real ESP32 ADC noise, offset, and non-linearity differ from this simulation.
 - Verification: checked the circuit against the component pin references, compared the serial
   ranges with the ADC API, and tested the output threshold boundaries in the running simulation.

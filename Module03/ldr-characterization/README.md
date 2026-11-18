@@ -38,7 +38,7 @@ Relative illuminance assumes inverse-square behaviour and is normalised to 1 at 
 
 Calculated decimal places preserve the calculation; they do not establish measurement accuracy.
 
-## Preliminary analysis
+## Six-point model analysis
 
 Both the voltage across the LDR and its calculated resistance increase with distance, consistent with resistance increasing as illumination decreases. Resistance increases by approximately 7.5 times between 5 and 30 cm.
 
@@ -53,6 +53,29 @@ Resistance-space fit RMSE ≈ 0.121 kΩ
 
 These provisional results depend on the inverse-square assumption. Ambient light, source directionality, distance and angle errors may affect the fit. This is not an absolute lux calibration. Fit residuals are not a complete measurement uncertainty budget. All six points were used here, so this particular fit has no held-out validation point.
 
+### Comparison with a linear fit
+
+The same six points give the resistance-space least-squares model:
+
+```text
+R_linear ≈ −1.884947 × E_relative + 2.025951 kΩ
+Resistance-space fit RMSE ≈ 0.650 kΩ
+```
+
+The power law was fitted by least squares in natural-log coordinates; the straight line was fitted in resistance coordinates. These objectives weight deviations differently. For a common descriptive comparison, both predictions are evaluated against the six derived resistance values in kΩ. The resulting power-law RMSE is 0.121 kΩ, compared with 0.650 kΩ for the straight line. This supports the power law as the better description of this dataset, but does not establish performance on new measurements.
+
+The straight-line model underpredicts the resistance at 30 cm by approximately 1.061 kΩ and overpredicts it at 10 cm by approximately 0.920 kΩ. The power-law residuals are smaller overall; its largest absolute residual is approximately 0.240 kΩ at 30 cm. Residual means need not be zero in resistance units for the log-space fit.
+
+![Six-point power-law and linear fits in original and logarithmic coordinates](evidence/Task1-LDR-Six-Point-Fits.png)
+
+![Prediction residuals from the same six points, in kΩ](evidence/Task1-LDR-Six-Point-Residuals.png)
+
+Residual sign is prediction minus resistance derived from the measured LDR voltage. Every point is used for fitting, so these are in-sample residuals. The separate 15 cm repeatability series under changed ambient light is excluded. The analysis does not supply missing ADC readings, absolute illuminance, a fresh validation point or an uncertainty budget.
+
+[Reproducible analysis](analysis/fit_transfer.py) · [Predictions and residuals](evidence/Task1-LDR-Six-Point-Fit.csv) · [Fit coefficients and assumptions](evidence/Task1-LDR-Six-Point-Fit.json)
+
+The analysis was added on 18 November 2026 using the saved 4 November readings. It is a documentation and calculation update; no new experiment was performed. Run the script with Python, NumPy and Matplotlib to regenerate the outputs. The independent two-point calibration remains in [Task 3b](../ldr-calibration/README.md).
+
 ## Study log
 
 - Source: [Module 3 — Sensor Characterization, Calibration & Data Quality](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-sensors-actuators-10d/modules/03-sensor-characterization-and-calibration.md).
@@ -66,8 +89,8 @@ These provisional results depend on the inverse-square assumption. Ambient light
 - [x] Record three repeated voltages at nominally 15 cm and calculate resistance spread. This separate run used changed ambient light and a confirmed 3.330 V supply.
 - [ ] Record the ADC pin, acquisition settings and raw codes at each level; compare against the multimeter.
 - [ ] Compare repeatability spread with the resistance change corresponding to one ADC step at that light level.
-- [ ] Produce the all-six-point log–log fit plot and residuals.
-- [ ] Fit a linear `R = a E_relative + b` model to the same six points and compare residuals in resistance units.
+- [x] Produce the all-six-point log–log fit plot and residuals from the accepted dataset.
+- [x] Fit a linear `R = a E_relative + b` model to the same six points and compare residuals in resistance units.
 - [ ] Document source settings, distance measurement, ambient-light control and fixed-resistor information.
 - [ ] Submit class-table rows and compare slopes with a neighbouring pod, if applicable.
 

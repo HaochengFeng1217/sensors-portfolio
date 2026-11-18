@@ -1,6 +1,18 @@
 # Module 3: Sensor Characterization and Calibration
 
-Student: Haocheng Feng. Measurements recorded on 4 and 10 November 2026.
+**Haocheng Feng** · HSBI Sensorik und Aktorik · Measurements: 4 and 10 November 2026
+
+[Portfolio](../README.md) · [Evidence](#experiment-records) · [Reflection](../Reflections/ref03.md) · [Review](../PORTFOLIO-REVIEW.md)
+
+Characterization, calibration and filtering records for the LDR, DS18B20 and ESP32 ADC chain. Original data, unsuccessful attempts and calculation limits are retained.
+
+## At a glance
+
+| Focus | Recorded evidence |
+| --- | --- |
+| **Calibration** | At a fresh 1.207 V reference point, custom ADC correction reduced the residual from +21.72 mV to +3.05 mV. |
+| **Dynamics and decisions** | Conditional water/air thermal-response estimates; five single-threshold switches versus one hysteresis switch on the same LDR trace. |
+| **Scope and limits** | Fresh LDR validation, reference-based temperature correction, controlled repeatability and combined uncertainty remain open. The hysteresis return/reset was not captured. |
 
 ## Learning Goals
 
@@ -12,13 +24,13 @@ Goal numbers follow the [Module 3 workbook](https://github.com/iotempire/iotempi
 | **LG2 · Dynamic characteristics.** Describe response time, time constant, bandwidth and self-heating. | Task 2.7 · DS18B20 water and air response | [Thermal response log and plots](ds18b20/README.md) support about 10 s in water and a model-based estimate of 140–160 s in air for the recorded setup. | Partial. The transfer timing and air conditions limit the estimates. Bandwidth and self-heating were not measured. |
 | **LG3 · Calibration.** Calibrate at two points and validate at a third point. | Tasks 3a–3c · ADC, LDR and DS18B20 | [ADC calibration and fresh 1.207 V validation](adc-calibration/README.md). The [LDR model](ldr-calibration/README.md) uses an existing point held out of the fit. | Demonstrated for the ADC chain. Fresh LDR validation and reference-based DS18B20 correction remain pending. |
 | **LG4 · Noise and filtering.** Quantify noise, improve data quality with filtering and explain the latency trade-off. | Tasks 5.1–5.5 · Potentiometer and LDR | [Raw noise statistics, filter replay and step response](noise-and-filtering/README.md). The [step record](noise-and-filtering/potentiometer-step/README.md) gives 20/20/40 ms relative crossing delays for MA5/median5/EMA on Run 4. | Demonstrated on the recorded traces with setup limitations. The separate decision-hysteresis test still lacks a return/reset capture. |
-| **LG5 · Uncertainty.** State a simple uncertainty budget for a measured value. | Task 3a · ADC validation and Task 6 · Uncertainty | The [ADC report](adc-calibration/README.md) identifies meter, supply and acquisition limitations. | Partial. Qualitative contributions are documented. A combined numerical uncertainty budget remains pending. |
+| **LG5 · Uncertainty.** State a simple uncertainty budget for a measured value. | Task 3a · ADC validation and Task 6 · Uncertainty | The [ADC report](adc-calibration/README.md) identifies meter, supply and acquisition limitations. | Partial. Qualitative contributions are documented. A [conditional repeatability contribution](adc-calibration/README.md#conditional-repeatability-contribution--documentation-review) is now calculated; a combined numerical uncertainty budget remains pending. |
 
 ## Experiment records
 
 | Task | Report | Recorded work and limits |
 | --- | --- | --- |
-| 1 | [LDR characterization](ldr-characterization/README.md) | Six distances and a separate repeatability set. ADC comparison remains pending. |
+| 1 | [LDR characterization](ldr-characterization/README.md) | Six distances, all-six-point power/linear fit and residual plots added on 18 November, plus a separate repeatability set. ADC comparison remains pending. |
 | 2 | [DS18B20 characterization](ds18b20/README.md) | Single-probe readings, resolution and repeatability observations, and thermal response in water and air. |
 | 3a | [ADC-chain calibration](adc-calibration/README.md) | Two calibration points and fresh third-point validation. |
 | 3b | [LDR calibration](ldr-calibration/README.md) | Power-law and linear models checked against an existing point. Fresh validation remains pending. |
@@ -57,4 +69,8 @@ This portfolio records the measurements available from these sessions. The stude
 
 ### Remaining study-log work
 
-Two independently found characterization examples, a complete search log, peer-verified mini checks, the neighbouring-pod exchange and agreed-learning note remain unrecorded. The thermal-response and LDR-model plots are candidate artefacts for discussion, not substitutes for those required external examples or a documented peer exchange. See the [completion checklist](completion-checklist.md).
+[Two manufacturer characterization examples and a review trail](characterization-examples.md) were added by Codex during the 18 November documentation review. They are later sourced study material, not evidence of an in-class pod search. Peer-verified mini checks, the neighbouring-pod exchange and agreed-learning note remain unrecorded. The thermal-response and LDR-model plots are candidate artefacts for discussion, not substitutes for those required external examples or a documented peer exchange. See the [completion checklist](completion-checklist.md).
+
+## Documentation update — 18 November 2026
+
+The [six-point fit comparison](ldr-characterization/README.md#six-point-model-analysis) was calculated from the original readings, and [DS18B20 parameter notes](ds18b20/README.md#21--consolidated-datasheet-parameters) were consolidated from the manufacturer datasheet. No new measurements were acquired. For an ideal first-order thermal model, bandwidth fc = 1/(2π tau): the approximate 10 s water response corresponds to 0.016 Hz, and the model-based 140–160 s air range to roughly 0.0010–0.0011 Hz. These are conditional model-derived bandwidths, not measured frequency responses or uncertainty intervals.

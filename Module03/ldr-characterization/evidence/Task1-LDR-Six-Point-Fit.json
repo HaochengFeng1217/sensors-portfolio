@@ -1,0 +1,24 @@
+{
+  "source": "Accepted 2026-11-04 Task 1 readings, transcribed from ../README.md",
+  "supply_V": 3.35,
+  "nominal_fixed_resistor_kohm": 10.0,
+  "relative_light_model": "(5 cm / distance_cm)^2; not measured lux",
+  "sample_count": 6,
+  "all_points_used_for_fit": true,
+  "power_fit": {
+    "objective": "OLS in natural-log space",
+    "A_kohm": 0.3515425859801836,
+    "gamma": 0.5785488630116474,
+    "log_intercept": -1.045424420076681,
+    "R2_log_space": 0.975848134475246,
+    "RMSE_kohm": 0.12062990018702428
+  },
+  "linear_fit": {
+    "objective": "OLS in resistance space",
+    "slope_kohm": -1.8849464963009348,
+    "intercept_kohm": 2.025950892642893,
+    "RMSE_kohm": 0.6496384528842832
+  },
+  "residual_definition": "predicted resistance minus measured-voltage-derived resistance",
+  "limits": "In-sample fit statistics, not independent validation or a complete uncertainty budget."
+}

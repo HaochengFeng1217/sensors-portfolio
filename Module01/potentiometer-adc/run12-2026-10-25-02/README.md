@@ -37,7 +37,7 @@ The position was held fixed according to the student's confirmation; no independ
 
 ## Remaining measurements
 
-A later 10-bit stationary comparison was also saved. A subsequent 10-bit manipulation attempt changed unexpectedly back to 12 bits, so a complete uninterrupted 10-bit sweep remains pending. Independent wiper-voltage measurements remain pending because the student has no multimeter available.
+A later 10-bit stationary comparison was saved. An intervening manipulation attempt changed unexpectedly back to 12 bits, but the [successful 10-bit repeat](../run10-2026-10-25-02/README.md) subsequently documented 10-bit output in all saved windows. Independent wiper-voltage measurements for this Module 1 setup remain unperformed; later meter availability does not supply a missing measurement from this run.
 
 ## Later repeat
 

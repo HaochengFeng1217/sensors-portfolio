@@ -6,7 +6,7 @@ Date: 2026-11-04
 
 The revised [course module](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-sensors-actuators-10d/modules/03-sensor-characterization-and-calibration.md) was checked on 2026-11-04.
 
-- [ ] 2.1: Complete the datasheet parameter notes.
+- [x] 2.1: Datasheet parameter notes consolidated on 2026-11-18; these are specifications, not additional measurements.
 - [x] 2.2: Connect one DS18B20 and confirm plausible readings.
 - [ ] 2.3, optional and skipped: Connect 2–3 probes to one bus and identify each ROM ID.
 - [ ] 2.4, partially completed under requirements checked on 2026-11-10: Four settings and five readings per setting were recorded. The revised task requires at least 20 readings per setting during a slow temperature sweep, checking the setResolution return value, address-specific readback and conversion-time documentation.
@@ -14,6 +14,23 @@ The revised [course module](https://github.com/iotempire/iotempire-teaching/blob
 - [ ] 2.6: Outdoor measurements at 1–2 locations, including reference readings and field notes.
 - [x] 2.7: Water and air response curves, conditional time-constant estimates and model-based settling estimates obtained. Air equilibrium was not reached; limitations are documented below.
 - [ ] 2.8, optional: Self-heating comparison.
+
+## 2.1 — Consolidated datasheet parameters
+
+Added during documentation review on 18 November 2026. Source: [DS18B20 datasheet, Rev. 6, July 2019](https://www.analog.com/media/en/technical-documentation/data-sheets/ds18b20.pdf), printed pages 1–3 and the power-supply section.
+
+| Parameter | Manufacturer specification |
+| --- | --- |
+| Local supply | 3.0–5.5 V |
+| Operating temperature | −55 to +125 °C |
+| Accuracy in central range | ±0.5 °C from −10 to +85 °C; wider-range limits differ |
+| Resolution | 9–12 bits; increments 0.5 to 0.0625 °C |
+| Conversion maximum | 93.75 / 187.5 / 375 / 750 ms for 9 / 10 / 11 / 12 bits |
+| Active current | At VDD=5 V: 1 mA typical, 1.5 mA maximum during conversion or EEPROM writes |
+| Standby current | 750 nA typical, 1000 nA maximum under the stated conditions; maximum specified through +70 °C, with DQ near a supply rail |
+| Bus and identity | 1-Wire, unique 64-bit ROM code; common ground required |
+
+The lab used an externally powered three-wire probe and a pull-up on DQ. Parasite-powered conversion needs the manufacturer's strong-pull-up arrangement; an ordinary pull-up is not automatically sufficient. Current specifications above are not measured probe consumption. The exact cable's colour code must be verified for the supplied probe.
 
 ## 2.2 — Single-probe connection and first readings
 

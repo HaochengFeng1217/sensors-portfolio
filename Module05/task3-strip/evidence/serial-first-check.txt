@@ -1,0 +1,10 @@
+Startup capture (escaped representation):
+'��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�x��\x00x�xxx\x00x�x�\x00�xets Jul 29 2019 12:21:46\n\nrst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)\nconfigsip: 0, SPIWP:0xee\nclk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00\nmode:DIO, clock div:2\nload:0x3fff0030,len:4640\nload:0x40078000,len:15632\nload:0x40080400,len:3164\nentry 0x400805'
+PASS command='clear' response='CLEARED'
+PASS command='8 255 0 0' response='ERROR: index 0..7 and RGB 0..255 required'
+PASS command='0 256 0 0' response='ERROR: index 0..7 and RGB 0..255 required'
+PASS command='0 1.5 0 0' response='ERROR: use index R G B or clear'
+PASS command='0 255 0' response='ERROR: use index R G B or clear'
+PASS command='0 255 0 0 7' response='ERROR: index 0..7 and RGB 0..255 required'
+PASS command='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' response='ERROR: line too long'
+PASS command='0 255 0 0' response='APPLIED index=0 R=255 G=0 B=0 luminance=80'

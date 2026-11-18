@@ -84,3 +84,9 @@ Fit coefficients: `a ≈ 0.000806024 V/code`, `b ≈ 0.132576 V`, as printed by 
 Validation residual: **+0.00305 V** at the 1.207 V reference point.  
 Calibration decision: Conditional local use supported by the fresh validation result; see limitations above.  
 Checked by: pending peer review.
+
+## Conditional repeatability contribution — documentation review
+
+On 18 November 2026 the saved validation statistics were used for an illustrative contribution calculation. With slope 0.000806024 V/code, sample SD 9.867 codes and 64 conversions, the voltage-equivalent single-conversion spread is 7.953 mV. If these conversions were independent samples of a stationary input, the standard uncertainty contribution of their mean would be 7.953/sqrt(64) = 0.994 mV.
+
+This assumption is unverified: the saved record has only a summary, and nearby observations included input movement. The result excludes reference uncertainty, calibration-point noise, covariance, drift and model inadequacy. It is not a combined uncertainty and does not show that the +3.05 mV validation residual is significant. Meter identity/range for this run remain unknown; the later UT131C strip measurement must not be imported into this uncertainty budget.
