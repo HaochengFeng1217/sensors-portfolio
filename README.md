@@ -25,12 +25,15 @@ Module 1 contains the hardware experiment records through Task 4, including prog
 
 Module 3 now includes English lab records for LDR characterization, DS18B20 thermal response, ADC calibration, and Task 5.1–5.5 noise/filtering evidence. Raw logs, unsuccessful attempts, plots and firmware are retained. The module checklist identifies remaining experiments and limitations, including the unmeasured hysteresis return/reset cycle.
 
+Module 4 evidence is maintained in Zhenning Yu's portfolio. The local module page maps learning goals to his liquid-level calibration, water detection, motion tests and sensor-selection report. [Module 4 evidence and attribution](Module04/README.md)
+
 ## Contents
 
 - [Module 0: Pre-study](pre-study/README.md)
 - [Module 1: experiment records — Tasks 1–4](Module01/README.md)
 - [Module 2: UART, divider and SPI research in progress](Module02/README.md)
 - [Module 3: sensor characterization and calibration](Module03/README.md)
+- [Module 4: liquid measurement and sensor selection](Module04/README.md)
 - [New module template](ModuleNN.md)
 - [Working-day reflections](Reflections/README.md)
 - [Hardware inventory](Hardware/README.md)
